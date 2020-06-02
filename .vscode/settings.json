@@ -1,0 +1,42 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "node_modules/**": true,
+        "dist/**": true
+    },
+    "htmlhint.options": {
+        "doctype-first": false,
+        "attr-lowercase": [
+            "*ngIf",
+            "*ngFor",
+            "fxLayout",
+            "fxLayoutGap",
+            "fxLayoutAlign",
+            "fxFlex",
+            "fxFlexOffset",
+            "formGroup",
+            "formControlName",
+            "[formGroup]",
+            "routerLink",
+            "routerLinkActive",
+            "matInput",
+            "[dataSource]",
+            "matColumnDef",
+            "*matCellDef",
+            "*matHeaderCellDef",
+            "*matHeaderRowDef",
+            "matRowDef",
+            "*matRowDef",
+            "matSort",
+            "[pageSize]",
+            "[pageIndex]",
+            "[pageSizeOptions]",
+            "[(ngModel)]",
+            "(ngModelChange)"
+        ]
+    }
+}
