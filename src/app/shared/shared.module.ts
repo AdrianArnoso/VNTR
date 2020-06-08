@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatFormFieldModule, MatListModule, MatCardModule, MatButtonModule, MatIconModule,
-  MatSelectModule, MatOptionModule, MatDialogModule
+  MatSelectModule, MatOptionModule, MatDialogModule, MatTabsModule
 } from '@angular/material';
 
 
@@ -22,6 +22,7 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatDialogModule,
+    MatTabsModule
   ],
   declarations: [],
   exports: [

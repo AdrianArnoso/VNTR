@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NavShellComponent } from './nav-shell/nav-shell.component';
+import { MatToolbarModule, MatTabsModule, MatSidenavModule, MatTableModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { SistemasComponent } from '../sistemas/sistemas.component';
+import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatTableModule,
+    SharedModule,
+    CommonModule,
+    RouterModule,
   ],
-  declarations: [PageNotFoundComponent]
+  declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, SistemasComponent],
+  exports: [NavShellComponent]
 })
 export class LayoutModule { }

@@ -1,0 +1,23 @@
+@import url('//cdn.abanca.io/assets/fonts/roboto.css');
+.app_header {
+  font-family: 'Roboto', sans-serif;
+}
+
+#logo{
+  width: 100px;
+  height: 25px;
+  padding-right: 16px;
+}
+
+.toolbar-icon {
+  padding: 0 14px;
+}
+
+.toolbar-space {
+  flex: 1 1 auto;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
