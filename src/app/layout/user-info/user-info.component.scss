@@ -1,0 +1,32 @@
+
+
+.user-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px;
+  background: #5c88da;
+  color: white;
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    padding-right: 8px;
+    font-size: 56px;
+
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: initial;
+
+    .user-name {
+      font-size: 16px;
+    }
+
+    .user-dni {
+      font-size: 12px;
+    }
+  }
+}

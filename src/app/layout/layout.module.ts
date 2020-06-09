@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SistemasComponent } from '../sistemas/sistemas.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     RouterModule,
   ],
-  declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, SistemasComponent],
+  declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, SistemasComponent, UserInfoComponent],
   exports: [NavShellComponent]
 })
 export class LayoutModule { }
