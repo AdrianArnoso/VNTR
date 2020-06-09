@@ -1,4 +1,51 @@
-<p>
-  home works!
-</p>
+<form action="">
+  <mat-form-field>
+    <mat-label> Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex: STI02">
+  </mat-form-field>
 
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Servicio Tecnológico </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Descripcion Column -->
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+    </ng-container>
+
+    <!-- Criticidad Column -->
+    <ng-container matColumnDef="criticidad">
+      <th mat-header-cell *matHeaderCellDef> Criticidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.criticidad}} </td>
+    </ng-container>
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="responsable">
+      <th mat-header-cell *matHeaderCellDef> Responsable </th>
+      <td mat-cell *matCellDef="let element"> {{element.responsable}} </td>
+    </ng-container>
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="negocio">
+      <th mat-header-cell *matHeaderCellDef> Negocio </th>
+      <td mat-cell *matCellDef="let element"> {{element.negocio}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-card-actions appearance="standard" class="div-button">
+    <button mat-flat-button color="primary">Nuevo Servicio</button>
+  </mat-card-actions>
+</form>
