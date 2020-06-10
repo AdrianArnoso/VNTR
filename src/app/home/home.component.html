@@ -43,7 +43,7 @@
     </ng-container>
 
     <!-- Checkbox Column -->
-    <ng-container matColumnDef="select">
+    <!-- <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
         <mat-checkbox color="primary"
                       (change)="$event ? masterToggle() : null"
@@ -60,13 +60,22 @@
                       [aria-label]="checkboxLabel(row)">
         </mat-checkbox>
       </td>
+    </ng-container> -->
+    <ng-container matColumnDef="boton">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <mat-card-actions appearance="standard" class="">
+          <button mat-flat-button color="primary">MODIFICAR</button>
+          <button mat-flat-button color="primary">ELIMINAR</button>
+        </mat-card-actions>
+      </td>
     </ng-container>
+    
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <mat-card-actions appearance="standard" class="div-button">
-    <button mat-flat-button color="primary">MODIFICAR</button>
     <button mat-flat-button color="primary">AÑADIR SERVICIO</button>
   </mat-card-actions>
 </form>
