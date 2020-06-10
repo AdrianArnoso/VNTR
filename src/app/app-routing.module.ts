@@ -4,11 +4,13 @@ import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { SistemasComponent } from './sistemas/sistemas.component';
+import { LoginComponent } from './layout/login/login.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'sistemas', component: SistemasComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

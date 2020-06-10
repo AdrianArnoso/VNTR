@@ -29,6 +29,11 @@ export class NavShellComponent implements OnInit {
         label: 'Sistemas De Informacion',
         link: '../sistemas' ,
         index: 1
+      },
+      {
+        label: 'Login',
+        link: '../login' ,
+        index: 2
       }
     ]
   }
