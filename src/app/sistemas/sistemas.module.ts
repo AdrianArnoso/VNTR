@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SistemasRoutingModule } from './sistemas-routing.module';
 import { SistemasComponent } from './sistemas.component';
 import { MatSortModule, MatButtonModule, MatTableModule, MatToolbarModule, MatTabsModule, MatSidenavModule, } from '@angular/material';
+import { NewSistemaComponent } from './new-sistema/new-sistema.component';
+import { FormSistemaComponent } from './form-sistema/form-sistema.component';
 
 
 @NgModule({
@@ -17,6 +19,6 @@ import { MatSortModule, MatButtonModule, MatTableModule, MatToolbarModule, MatTa
     MatTabsModule,
     MatSidenavModule
   ],
-  declarations: [SistemasComponent]
+  declarations: [SistemasComponent, NewSistemaComponent, FormSistemaComponent]
 })
 export class SistemasModule { }
