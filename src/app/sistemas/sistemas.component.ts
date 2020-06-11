@@ -20,6 +20,7 @@ export class SistemasComponent implements OnInit {
     {id: 'SI00003', sistemaInformacion: 'Sistema de información CRM analítico', criticidad: 'No'},
     {id: 'SI00004', sistemaInformacion: 'Sistema de información de comunicación al empleado', criticidad: 'No'},
     {id: 'SI00005', sistemaInformacion: 'Sistema de información de comunicación al empleado dffsdfdsfsfsdfdsffsdfsd', criticidad: 'No'},
+    {id: 'SI00006', sistemaInformacion: 'Sistema de información de comunicación al empleado dffsdfdsfsfsdfdsffsdfsd', criticidad: 'No'},
   ];
   constructor() { 
     
