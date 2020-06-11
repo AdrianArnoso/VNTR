@@ -1,3 +1,82 @@
-<p>
-  sistemas works!
-</p>
+
+<mat-card>
+
+
+  
+<span>Sistemas de información</span>
+<br/>
+<form>
+  <mat-form-field >
+      <mat-label>Id</mat-label>
+        <input matInput placeholder="Id"/>
+      
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>Sistema de información</mat-label>
+        <input matInput placeholder="Sistema de información"/>
+      
+  </mat-form-field>
+  
+
+  <button mat-raised-button>Buscar</button>
+</form>
+<br/>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+
+  <!-- Columna Id -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+    <td mat-cell *matCellDef="let sistema"> {{sistema.id}} </td>
+  </ng-container>
+
+
+  <!-- Columna Sistema de informacion -->
+  <ng-container matColumnDef="sistemaInformacion">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Sistema de informacion </th>
+    <td mat-cell *matCellDef="let sistema"> {{sistema.sistemaInformacion}} </td>
+  </ng-container>
+
+
+  <!-- Columna criticidad -->
+  <ng-container matColumnDef="criticidad">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Criticidad </th>
+    <td mat-cell *matCellDef="let sistema"> {{sistema.criticidad}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="borrar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let j = index;">
+        <button mat-raised-button  focusable="false" (click)="borrarFila(j)">
+          Borrar
+        </button>
+        <button mat-raised-button  focusable="false" (click)="modificarFila(j)">
+          Modificar
+        </button>
+      </td>
+    </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+
+
+</table>
+  <button mat-raised-button>Nuevo sistema</button>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+

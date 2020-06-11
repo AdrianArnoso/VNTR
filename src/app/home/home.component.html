@@ -3,6 +3,10 @@
     <mat-label> Search</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex: STI02">
   </mat-form-field>
+  <mat-card-actions appearance="standard" class="">
+    <button mat-flat-button color="primary">BUSCAR</button>
+    <button mat-flat-button color="primary">LIMPIAR</button>
+  </mat-card-actions>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -12,7 +16,7 @@
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- Servicio Tecnológico -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Servicio Tecnológico </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
