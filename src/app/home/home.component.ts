@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatSort } from '@angular/material/sort';
 
 export interface Servicios {
   name: string;
@@ -10,6 +11,8 @@ export interface Servicios {
   responsable: string;
   negocio: string;
 }
+
+
 
 const ELEMENT_DATA: Servicios[] = [
   {id: "STI01", name: 'Desarrollo y Mantenimiento de Software', descripcion: "", criticidad: 'B', responsable: "Arnoso", negocio: "ABANCA España"},
@@ -24,10 +27,12 @@ const ELEMENT_DATA: Servicios[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource.sort = this.sort;
   }
 
   displayedColumns: string[] = ['id', 'name', 'descripcion', 'criticidad', 'responsable', 'negocio', /*'select' ,*/ 'boton'];
