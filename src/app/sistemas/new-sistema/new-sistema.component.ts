@@ -7,7 +7,7 @@ import { TareasService } from 'src/app/tareas.service';
   styleUrls: ['./new-sistema.component.scss']
 })
 export class NewSistemaComponent implements OnInit {
-  familias = this.tareasService.getEmpresasExternalizadas();
+  familias = this.tareasService.getFamilias();
 
   constructor(private tareasService: TareasService) { }
 
