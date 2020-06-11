@@ -1,0 +1,121 @@
+<form [formGroup]="catalogoForm" novalidate>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title-text">Nuevo/Modificar Servicio</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="most-width">
+            <mat-label>Catálogo de Servicios</mat-label>
+            <input matInput formControlName="catalogo_servicios_es" />
+            <mat-error
+              *ngIf="catalogoForm.controls['catalogo_servicios_es'].hasError('required')"
+            >
+              Este campo es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard" class="less-width">
+            <mat-label>Responsable</mat-label>
+            <input matInput formControlName="responsable"/>
+            <mat-error
+              *ngIf="catalogoForm.controls['responsable'].hasError('required')"
+            >
+              Este campo es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="most-width">
+            <mat-label>Service Catalogue</mat-label>
+            <input matInput formControlName="catalogo_servicios_en"/>
+            <mat-error
+              *ngIf="catalogoForm.controls['catalogo_servicios_en'].hasError('required')"
+            >
+              Este campo es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard" class="less-width">
+            <mat-label>Negocio</mat-label>
+            <mat-select formControlName="negocio">
+              <mat-option *ngFor="let negocio of negocios" [value]="negocio.id">
+                {{ negocio.name }}
+              </mat-option>
+
+              <!-- <mat-option value="abanca_espana">ABANCA España</mat-option>
+              <mat-option value="abanca_portugal">ABANCA Portugal</mat-option>
+              <mat-option value="abanca-suiza">ABANCA Suiza</mat-option>
+              <mat-option value="abanca_usa">ABANCA USA</mat-option>
+              <mat-option value="asf_espana">ASF España</mat-option>
+              <mat-option value="asf_portugal">ASF Porugal</mat-option> -->
+            </mat-select>
+            <mat-hint>Negocio al que da servicio</mat-hint>
+            <mat-error
+              *ngIf="catalogoForm.controls['negocio'].hasError('required')"
+            >
+              Es <strong>obligatorio</strong> seleccionar una opción
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="text-width" >
+            <mat-label>Descripción</mat-label>
+            <textarea matInput matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10 formControlName="descripcion_es"></textarea>
+
+            <mat-error
+              *ngIf="catalogoForm.controls['descripcion_es'].hasError('required')"
+            >
+              Este campo es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard" class="text-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10 formControlName="descripcion_en"></textarea>
+          <mat-error
+          *ngIf="catalogoForm.controls['descripcion_en'].hasError('required')"
+        >
+          Este campo es <strong>obligatorio</strong>
+        </mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flex-container">
+        <mat-form-field appearance="standard" class="width-radio">
+          <mat-label>Criticidad</mat-label>
+          <mat-select formControlName="criticidad">
+            <mat-option value="a">A</mat-option>
+            <mat-option value="b">B</mat-option>
+            <mat-option value="c">C</mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="catalogoForm.controls['criticidad'].hasError('required')"
+        >
+          Es <strong>obligatorio</strong> seleccionar una opción
+        </mat-error>
+
+        </mat-form-field>
+      </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions appearance="standard" class="div-button">
+      <button mat-flat-button color="primary" [disabled]="catalogoForm.invalid">GUARDAR</button>
+      <button mat-flat-button color="primary">CANCELAR</button>
+  </mat-card-actions>
+
+  </mat-card>
+</form>
