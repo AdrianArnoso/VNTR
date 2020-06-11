@@ -12,22 +12,21 @@ export class SistemasComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  dataSource = null;
 
   datos: Sistema [] = [
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},
     {id: 'SI00002', sistemaInformacion: 'Sistema de información CRM operativo', criticidad: 'No'},
     {id: 'SI00003', sistemaInformacion: 'Sistema de información CRM analítico', criticidad: 'No'},
     {id: 'SI00004', sistemaInformacion: 'Sistema de información de comunicación al empleado', criticidad: 'No'},
-    {id: 'SI00005', sistemaInformacion: 'Sistema de información de comunicación al empleado dffsdfdsfsfsdfdsffsdfsd', criticidad: 'No'},
-    {id: 'SI00006', sistemaInformacion: 'Sistema de información de comunicación al empleado dffsdfdsfsfsdfdsffsdfsd', criticidad: 'No'},
+    {id: 'SI00005', sistemaInformacion: 'Sistema de información de mensajería y colaboración', criticidad: 'No'},
+    {id: 'SI00006', sistemaInformacion: 'Sistema de información de gestión operativa', criticidad: 'No'},
   ];
   constructor() { 
     
   }
-
+  dataSource = new MatTableDataSource<Sistema>(this.datos);
   ngOnInit() {
-   this.dataSource = new MatTableDataSource<Sistema>(this.datos);
+   
    this.dataSource.sort = this.sort;
   }
 
