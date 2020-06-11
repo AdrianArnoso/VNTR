@@ -1,0 +1,87 @@
+
+
+<mat-card >
+<div>    
+  <span>Externalizacion - Consultar Servicio </span> 
+  <div class="buttonIdioma">
+    <button  mat-raised-button color="primary" [matMenuTriggerFor]="menu">Idiomas</button>
+    
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Castellano</button>
+      <button mat-menu-item>Portugues</button>
+      <button mat-menu-item>Ingles</button>
+    </mat-menu>
+  </div>
+</div>
+</mat-card>
+
+<mat-card> 
+  
+  <div>
+    <strong>STI01 - Desarollo y mantenimeineto de Software </strong>
+    <div class="buttonsCrud">
+      <div class="buttonsCrudModificarEliminar">
+      <button  mat-raised-button color="primary" >Modificar</button>
+      <button  mat-raised-button color="primary" >Eliminar</button>
+      </div>
+      <button  mat-raised-button color="primary" >Nueva Actividad</button>
+    </div>
+  </div>
+</mat-card>
+
+
+<!-- Tabla -->
+<mat-card class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <!-- Position Column -->
+  <ng-container matColumnDef="Se">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Se </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Se}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Id_Actividad">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Id_Actividad </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Id_Actividad}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Descripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Actividades S. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Descripcion}} </mat-cell>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="Externalizacion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Externalizacion </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Externalizacion}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Criticidad">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Criticidad </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Criticidad}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Altia">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Altia </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Altia}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Indra">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Indra </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Indra}} </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<div class="buttonsTableCrud" >
+  <button  mat-raised-button color="primary" >Atras</button>
+  <div class="buttonsTableCrudModificarEliminar">
+    <button  mat-raised-button color="primary" >Modificar seleccionado</button>
+    <button  mat-raised-button color="primary" >Eliminar seleccionado</button>
+  </div>
+</div>
+</mat-card>

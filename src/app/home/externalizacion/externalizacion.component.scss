@@ -1,0 +1,34 @@
+example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  
+  
+  
+  .buttonIdioma {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+    margin-right: 20px;
+  }
+
+  .buttonsCrud{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+    margin-right: 20px;
+
+  }
+  .buttonsCrudModificarEliminar{
+      margin-right: 100px;
+  }
+
+  .buttonsTableCrud{
+      margin-top: 50px;
+   }
+   .buttonsTableCrudModificarEliminar{
+        margin-top: -35px;
+        margin-left: 70%;
+   }
