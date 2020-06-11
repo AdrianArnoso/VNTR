@@ -9,6 +9,7 @@ import { TareasService } from 'src/app/tareas.service';
 export class NewCatalogoserviciosComponent implements OnInit {
   negocios = this.tareasService.getNegocios();
 
+
   constructor(private tareasService: TareasService) { }
 
   ngOnInit() {

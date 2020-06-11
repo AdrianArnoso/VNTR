@@ -1,12 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'abanca-form-catalogoservicios',
   templateUrl: './form-catalogoservicios.component.html',
   styleUrls: ['./form-catalogoservicios.component.scss']
 })
-
 export class FormCatalogoserviciosComponent {
   catalogoForm = this.fb.group({
     catalogo_servicios_es: [null, [Validators.required]],
@@ -19,6 +18,7 @@ export class FormCatalogoserviciosComponent {
   });
 
   @Input() negocios;
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
