@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ NewSistemaComponent],
+  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

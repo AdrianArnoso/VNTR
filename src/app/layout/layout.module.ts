@@ -9,6 +9,8 @@ import { SistemasComponent } from '../sistemas/sistemas.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { FormSistemaComponent } from '../sistemas/form-sistema/form-sistema.component';
+import { SistemasModule } from '../sistemas/sistemas.module';
 
 @NgModule({
   imports: [
@@ -20,9 +22,10 @@ import { UserInfoComponent } from './user-info/user-info.component';
     SharedModule,
     CommonModule,
     RouterModule,
-    MatSortModule
+    MatSortModule,
+    SistemasModule
   ],
-  declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, SistemasComponent, UserInfoComponent],
+  declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, UserInfoComponent],
   exports: [NavShellComponent]
 })
 export class LayoutModule { }
