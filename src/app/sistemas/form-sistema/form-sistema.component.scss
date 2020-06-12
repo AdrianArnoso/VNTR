@@ -29,7 +29,7 @@
 
 label{
   margin-top: 45px;
-  margin-left: 45px;
+  margin-left: 10px;
   margin-right: 19px;
 }
 
@@ -38,16 +38,15 @@ label{
   display: flex;
   flex-wrap: wrap;
   float: right;
-  margin-right: 10px;
-  padding-left: 0;
-  width:40%;
+  margin-right: 19px;
+  width:100%;
 }
 
 .check-section mat-checkbox {
   list-style: none;
   // flex: 1 1 18%;
   // flex: 0 0 33.333333%;
-  flex: 0 0 50%;
+  flex: 0 0 44%;
 }
 
 
