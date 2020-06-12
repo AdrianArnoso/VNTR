@@ -1,12 +1,35 @@
 <form action="">
-  <mat-form-field>
-    <mat-label> Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex: STI02">
-  </mat-form-field>
-  <mat-card-actions appearance="standard" class="mat-flat-button">
-    <button mat-flat-button color="primary">BUSCAR</button>
-    <button mat-flat-button color="primary">LIMPIAR</button>
-  </mat-card-actions>
+
+  <div>
+    <mat-form-field class="search" >
+        <mat-label>Id</mat-label>
+          <input matInput placeholder="Id"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Servicio Tecnológico</mat-label>
+          <input matInput placeholder="Servicio Tecnológico"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Criticidad</mat-label>
+      <mat-select >
+        <mat-option value="Todo"></mat-option>
+        <mat-option value="Si">Si</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Responsable</mat-label>
+        <input matInput placeholder="Responsable"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Negocio</mat-label>
+        <input matInput placeholder="Negocio"/>
+    </mat-form-field>
+    <mat-card-actions appearance="standard" class="mat-flat-button">
+      <button mat-flat-button color="primary">LIMPIAR</button>
+      <button mat-flat-button color="primary">BUSCAR</button>
+    </mat-card-actions>
+  </div>
 
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
