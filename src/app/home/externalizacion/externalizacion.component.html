@@ -3,7 +3,7 @@
 <mat-card >
 <div>
   <span>Externalizacion - Consultar Servicio </span>
-  <div class="buttonIdioma">
+  <!-- <div class="buttonIdioma">
     <button  mat-raised-button color="primary" [matMenuTriggerFor]="menu">Idiomas</button>
 
     <mat-menu #menu="matMenu">
@@ -11,7 +11,7 @@
       <button mat-menu-item>Portugues</button>
       <button mat-menu-item>Ingles</button>
     </mat-menu>
-  </div>
+  </div> -->
 </div>
 </mat-card>
 
@@ -21,17 +21,17 @@
     <strong>STI01 - Desarollo y mantenimeineto de Software </strong>
     <div class="buttonsCrud">
       <div class="buttonsCrudModificarEliminar">
-      <button  mat-raised-button color="primary" >Modificar</button>
-      <button  mat-raised-button color="primary" >Eliminar</button>
+      <button   mat-flat-button color="primary" >Modificar</button>
+      <button   mat-flat-button color="primary" >Eliminar</button>
       </div>
-      <button  mat-raised-button routerLink="/newActividadExternalizacion" color="primary" >Nueva Actividad</button>
+      <button   mat-flat-button color routerLink="/newActividadExternalizacion" color="primary" >Nueva Actividad</button>
     </div>
   </div>
 </mat-card>
 
 
 <!-- Tabla -->
-<mat-card class="mat-elevation-z8">
+
 <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
   <!-- Position Column -->
   <ng-container matColumnDef="Se">
@@ -72,16 +72,28 @@
     <mat-cell *matCellDef="let element"> {{element.Indra}} </mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="Buttons" >
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let j = index;">
+      <button mat-flat-button color='primary'  focusable="false" >
+        ELIMINAR
+      </button>
+      <button mat-flat-button color='primary'  focusable="false" >
+        MODIFICAR
+      </button>
+    </mat-cell>
+  </ng-container>
+
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 
-<div class="buttonsTableCrud" >
-  <button  mat-raised-button color="primary" >Atras</button>
-  <div class="buttonsTableCrudModificarEliminar">
-    <button  mat-raised-button color="primary" >Modificar seleccionado</button>
-    <button  mat-raised-button color="primary" >Eliminar seleccionado</button>
-  </div>
+<div class="atras" >
+  <button  mat-flat-button color="primary" >Atras</button>
+  <!-- <div class="buttonsTableCrudModificarEliminar">
+    <button  mat-flat-button color="primary" >Modificar seleccionado</button>
+    <button  mat-flat-button color="primary" >Eliminar seleccionado</button>
+  </div> -->
 </div>
-</mat-card>
+
