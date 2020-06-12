@@ -1,0 +1,75 @@
+<form [formGroup]="sistemasForm" novalidate>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title-text"
+        >Nuevo/Modificar Sistema</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-divider></mat-divider>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="most-width">
+            <mat-label>Sistema de Información</mat-label>
+            <input matInput formControlName="sistemaInformacion_es"/>
+            <mat-error
+            *ngIf="sistemasForm.controls['sistemaInformacion_es'].hasError('required')"
+          >
+            Este campo es <strong>obligatorio</strong>
+          </mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="most-width">
+            <mat-label>Information System</mat-label>
+            <input matInput formControlName="sistemaInformacion_en"/>
+            <mat-error
+            *ngIf="sistemasForm.controls['sistemaInformacion_en'].hasError('required')"
+          >
+            Este campo es <strong>obligatorio</strong>
+          </mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="flex-container">
+          <mat-form-field appearance="standard" class="width-radio">
+            <mat-label>Crítico</mat-label>
+            <mat-select formControlName="critico" >
+              <mat-option value="si" (click)="onClickSelect(true)">SÍ</mat-option>
+              <mat-option value="no" (click)="onClickSelect(false)">NO</mat-option>
+            </mat-select>
+            <mat-error
+            *ngIf="sistemasForm.controls['critico'].hasError('required')"
+          >
+            Es <strong>obligatorio</strong> seleccionar una opción
+          </mat-error>
+          </mat-form-field>
+
+
+            <section class="check-section">
+              <mat-checkbox color="primary" class="check-margin"
+              [disabled]="disabledCheck"
+              *ngFor="let familia of familias" [value]="familia.id">
+              {{ familia.name }}
+            </mat-checkbox>
+            </section>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+    <mat-card-actions appearance="standard" class="div-button">
+      <button mat-flat-button color="primary" [disabled]="sistemasForm.invalid">GUARDAR</button>
+      <button mat-flat-button color="primary">CANCELAR</button>
+    </mat-card-actions>
+
+  </mat-card>
+</form>

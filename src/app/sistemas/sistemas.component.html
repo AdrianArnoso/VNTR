@@ -1,18 +1,18 @@
 
-  
+
 <br/>
 <form>
   <mat-form-field >
       <mat-label>Id</mat-label>
         <input matInput placeholder="Id"/>
-      
+
   </mat-form-field>
   <mat-form-field>
       <mat-label>Sistema de información</mat-label>
         <input matInput placeholder="Sistema de información"/>
-      
+
   </mat-form-field>
-  
+
   <mat-form-field>
     <mat-label>Criticidad</mat-label>
     <mat-select >
@@ -56,10 +56,10 @@
   <ng-container matColumnDef="borrar" >
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let j = index;">
-        <button mat-flat-button color='primary'  focusable="false" (click)="borrarFila(j)">
-          BORRAR
+        <button mat-flat-button color='primary'  focusable="false" >
+          ELIMINAR
         </button>
-        <button mat-flat-button color='primary'  focusable="false" (click)="modificarFila(j)">
+        <button mat-flat-button color='primary'  focusable="false" >
           MODIFICAR
         </button>
       </td>
@@ -74,7 +74,7 @@
 
 <br/>
 
-  <button mat-flat-button color='primary'>NUEVO SISTEMA</button>
+  <button mat-flat-button routerLink="newSistema" color='primary'>NUEVO SISTEMA</button>
 
 
 

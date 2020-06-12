@@ -9,12 +9,18 @@ table {
 
 }
 
- .mat-flat-button{
+td > .mat-flat-button{
   
     float: right;
     margin-right: 10px;
+    margin-left: 10px
   }
   
+.mat-flat-button {
+  margin-left: 30px;
+  margin-right: 10px;
+} 
+
 button{
     opacity: 100%;
     font-size: 14px;

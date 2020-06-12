@@ -36,4 +36,22 @@ export class TareasService {
     ];
   }
 
+  getFamilias() {
+    return [
+      { id: 0, name: 'Asesoramiento comercial a clientes en productos de inversión' },
+      { id: 1, name: 'Avales' },
+      { id: 2, name: 'Banca Electrónica' },
+      { id: 3, name: 'COMEX'},
+      { id: 4, name: 'Confirming' },
+      { id: 5, name: 'Créditos'},
+      { id: 6, name: 'Descuento' },
+      { id: 7, name: 'Domiciliaciones' },
+      { id: 8, name: 'Factoring' },
+      { id: 9, name: 'Financiación Especial'},
+      { id: 10, name: 'Fondos de Inversión' },
+      { id: 11, name: 'Leasing'},
+      { id: 12, name: 'Medios de Pago'},
+    ];
+  }
+
 }
