@@ -29,7 +29,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ExternalizacionComponent implements OnInit {
 
-  displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra'];
+  displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra','Buttons'];
   // dataSource = ELEMENT_DATA02;
   constructor() { }
   
