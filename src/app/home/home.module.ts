@@ -52,6 +52,8 @@ import { NewCatalogoserviciosComponent } from './new-catalogoservicios/new-catal
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { ExternalizacionComponent } from './externalizacion/externalizacion.component';
+import { NewActividadexternalizacionComponent } from './new-actividadexternalizacion/new-actividadexternalizacion.component';
+import { FormActividadexternalizacionComponent } from './form-actividadexternalizacion/form-actividadexternalizacion.component';
 
 @NgModule({
   imports: [
@@ -104,6 +106,6 @@ import { ExternalizacionComponent } from './externalizacion/externalizacion.comp
     MatFormFieldModule,
 
   ],
-  declarations: [HomeComponent, FormCatalogoserviciosComponent, NewCatalogoserviciosComponent,ExternalizacionComponent]
+  declarations: [HomeComponent, FormCatalogoserviciosComponent, NewCatalogoserviciosComponent,ExternalizacionComponent, NewActividadexternalizacionComponent, FormActividadexternalizacionComponent]
 })
 export class HomeModule { }
