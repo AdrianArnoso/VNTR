@@ -24,13 +24,5 @@ export class FormSistemaComponent  {
   ngOnInit() {
   }
 
-  onClickSelect(option){
-    if(option == true){
-      this.disabledCheck = false;
-    }else if(option == false){
-      this.disabledCheck = true;
-    }
-  }
-
 }
 

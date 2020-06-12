@@ -10,7 +10,7 @@
 
       <div class="row">
         <div class="flex-container">
-          <mat-form-field appearance="standard" class="most-width">
+          <mat-form-field appearance="standard" class="all-width">
             <mat-label>Sistema de Información</mat-label>
             <input matInput formControlName="sistemaInformacion_es"/>
             <mat-error
@@ -25,7 +25,7 @@
 
       <div class="row">
         <div class="flex-container">
-          <mat-form-field appearance="standard" class="most-width">
+          <mat-form-field appearance="standard" class="all-width">
             <mat-label>Information System</mat-label>
             <input matInput formControlName="sistemaInformacion_en"/>
             <mat-error
@@ -43,8 +43,8 @@
           <mat-form-field appearance="standard" class="width-radio">
             <mat-label>Crítico</mat-label>
             <mat-select formControlName="critico" >
-              <mat-option value="si" (click)="onClickSelect(true)">SÍ</mat-option>
-              <mat-option value="no" (click)="onClickSelect(false)">NO</mat-option>
+              <mat-option value="si">SÍ</mat-option>
+              <mat-option value="no">NO</mat-option>
             </mat-select>
             <mat-error
             *ngIf="sistemasForm.controls['critico'].hasError('required')"
@@ -53,10 +53,15 @@
           </mat-error>
           </mat-form-field>
 
+        </div>
+      </div>
 
-            <section class="check-section">
+      <div class="row">
+        <div class="flex-container">
+          <label>Familias:</label>
+
+          <section class="check-section">
               <mat-checkbox color="primary" class="check-margin"
-              [disabled]="disabledCheck"
               *ngFor="let familia of familias" [value]="familia.id">
               {{ familia.name }}
             </mat-checkbox>

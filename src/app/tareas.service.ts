@@ -51,6 +51,20 @@ export class TareasService {
       { id: 10, name: 'Fondos de Inversión' },
       { id: 11, name: 'Leasing'},
       { id: 12, name: 'Medios de Pago'},
+      { id: 13, name: 'Mercado de Capitales' },
+      { id: 14, name: 'Multifinanciación' },
+      { id: 15, name: 'Oficinas de Representación' },
+      { id: 16, name: 'Pasivo'},
+      { id: 17, name: 'Planes de Pensiones' },
+      { id: 18, name: 'Préstamos'},
+      { id: 19, name: 'Renting' },
+      { id: 20, name: 'Seguros-Personas' },
+      { id: 21, name: 'Seguros-Todos' },
+      { id: 22, name: 'Valores'},
+      { id: 23, name: 'Banca Digital' },
+      { id: 24, name: 'Clientes'},
+      { id: 25, name: 'Colaboradores'},
+      { id: 26, name: 'Financiación en punto de venta'},
     ];
   }
 
