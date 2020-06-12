@@ -21,8 +21,10 @@
       <mat-option value="No">No</mat-option>
     </mat-select>
 </mat-form-field>
-
-  <button mat-flat-button color='primary'>BUSCAR</button>
+<mat-card-actions appearance="standard" class="mat-flat-button">
+  <button mat-flat-button color="primary">LIMPIAR</button>
+  <button mat-flat-button color="primary">BUSCAR</button>
+</mat-card-actions>
 </form>
 <br/>
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -73,8 +75,10 @@
 </table>
 
 <br/>
-
-  <button mat-flat-button routerLink="newSistema" color='primary'>NUEVO SISTEMA</button>
+<mat-card-actions appearance="standard" class="div-button">
+  <button mat-flat-button routerLink="newSistema" color='primary'>AÑADIR SISTEMA</button>
+</mat-card-actions>
+  
 
 
 
