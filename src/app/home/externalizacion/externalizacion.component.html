@@ -1,11 +1,11 @@
 
 
 <mat-card >
-<div>    
-  <span>Externalizacion - Consultar Servicio </span> 
+<div>
+  <span>Externalizacion - Consultar Servicio </span>
   <div class="buttonIdioma">
     <button  mat-raised-button color="primary" [matMenuTriggerFor]="menu">Idiomas</button>
-    
+
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Castellano</button>
       <button mat-menu-item>Portugues</button>
@@ -15,8 +15,8 @@
 </div>
 </mat-card>
 
-<mat-card> 
-  
+<mat-card>
+
   <div>
     <strong>STI01 - Desarollo y mantenimeineto de Software </strong>
     <div class="buttonsCrud">
@@ -24,7 +24,7 @@
       <button  mat-raised-button color="primary" >Modificar</button>
       <button  mat-raised-button color="primary" >Eliminar</button>
       </div>
-      <button  mat-raised-button color="primary" >Nueva Actividad</button>
+      <button  mat-raised-button routerLink="/newActividadExternalizacion" color="primary" >Nueva Actividad</button>
     </div>
   </div>
 </mat-card>
@@ -51,7 +51,7 @@
     <mat-cell *matCellDef="let element"> {{element.Descripcion}} </mat-cell>
   </ng-container>
 
-  
+
   <ng-container matColumnDef="Externalizacion">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Externalizacion </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.Externalizacion}} </mat-cell>
