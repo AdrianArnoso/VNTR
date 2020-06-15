@@ -21,10 +21,10 @@
     <strong>STI01 - Desarollo y mantenimeineto de Software </strong>
     <div class="buttonsCrud">
       <div class="buttonsCrudModificarEliminar">
-      <button   mat-flat-button color="primary" >Modificar</button>
-      <button   mat-flat-button color="primary" >Eliminar</button>
+      <button   mat-flat-button color="primary" *ngIf = "rol">Modificar</button>
+      <button   mat-flat-button color="primary" *ngIf = "rol">Eliminar</button>
       </div>
-      <button   mat-flat-button color routerLink="/newActividadExternalizacion" color="primary" >Nueva Actividad</button>
+      <button   mat-flat-button color routerLink="/newActividadExternalizacion" color="primary" *ngIf = "rol">Nueva Actividad</button>
     </div>
   </div>
 </mat-card>
@@ -75,10 +75,10 @@
   <ng-container matColumnDef="Buttons" >
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
     <mat-cell *matCellDef="let j = index;">
-      <button mat-flat-button color='primary'  focusable="false" >
+      <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
         ELIMINAR
       </button>
-      <button mat-flat-button color='primary'  focusable="false" >
+      <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
         MODIFICAR
       </button>
     </mat-cell>

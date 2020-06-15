@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {  MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { TareasService } from 'src/app/tareas.service';
 
   //  export interface Extarnilacion {
   //   Se: String;
@@ -30,8 +31,11 @@ import { MatSort } from '@angular/material/sort';
 export class ExternalizacionComponent implements OnInit {
 
   displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra','Buttons'];
+  rol: boolean;
   // dataSource = ELEMENT_DATA02;
-  constructor() { }
+  constructor(tareasService: TareasService) { 
+    this.rol = tareasService.getRol();
+  }
   
   
    @ViewChild(MatSort) sort: MatSort;
