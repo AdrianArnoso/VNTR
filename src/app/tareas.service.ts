@@ -7,6 +7,16 @@ export class TareasService {
 
   constructor() { }
 
+  rol: boolean = false;
+
+  setRol(){
+    this.rol = !this.rol;
+  }
+
+  getRol(){
+    return this.rol;
+  }
+
   getNegocios() {
     return [
       { id: 0, name: 'ABANCA España' },
