@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TareasService } from '../../tareas.service';
 
 @Component({
   selector: 'abanca-login',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
+  value:boolean;
 
-  constructor() { }
+  constructor(private tareasService: TareasService) { 
+    this.value = tareasService.getRol();
+
+  }
+
+  onChange(){
+    this.tareasService.setRol();
+  }
 
   ngOnInit() {
+    
   }
 
 }

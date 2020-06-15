@@ -16,8 +16,9 @@
       </mat-form-field>
     </form>
     
-   
+    <mat-slide-toggle [color]="primary" (change)="onChange($event)" [(ngModel)] ="value">Responsable</mat-slide-toggle>
   </mat-card-content>
+ 
   <mat-card-actions>
     <button mat-raised-button="" color="primary">Entrar</button>
   </mat-card-actions>
