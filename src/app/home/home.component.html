@@ -18,8 +18,14 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Responsable</mat-label>
-        <input matInput placeholder="Responsable"/>
+      <!-- <mat-label>Responsable</mat-label>
+        <input matInput placeholder="Responsable"/> -->
+        <mat-label>Responsable</mat-label>
+          <mat-select >
+            <mat-option *ngFor="let responsable of responsables" [value]="responsable.id">
+              {{ responsable.name }}
+            </mat-option>
+          </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Negocio</mat-label>
@@ -87,7 +93,7 @@
   </table>
   <mat-card-actions appearance="standard" class="div-button">
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
-    
-   
+
+
   </mat-card-actions>
 </form>

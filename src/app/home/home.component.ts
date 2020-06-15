@@ -17,7 +17,7 @@ const ELEMENT_DATA: Servicios[] = [
   {id: "STI01", name: 'Desarrollo y Mantenimiento de Software', descripcion: "", criticidad: 'B', responsable: "Arnoso", negocio: "ABANCA España"},
   {id: "STI02", name: 'Implantación y Configuración de Productos', descripcion: "", criticidad: 'C', responsable: "Quijano", negocio: "ABANCA USA"},
   {id: "STI03", name: 'Instalación y retirada de equipamiento TIC', descripcion: "", criticidad: 'C', responsable: "Fraga", negocio: "ABANCA Portugal"},
-  
+
 ];
 
 @Component({
@@ -28,9 +28,11 @@ const ELEMENT_DATA: Servicios[] = [
 export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   rol: boolean;
+  responsables;
 
-  constructor(tareasService: TareasService) { 
+  constructor(tareasService: TareasService) {
     this.rol = tareasService.getRol();
+    this.responsables = tareasService.getResponsables();
   }
 
   ngOnInit() {
