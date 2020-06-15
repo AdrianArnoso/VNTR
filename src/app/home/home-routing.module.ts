@@ -4,10 +4,12 @@ import { HomeComponent } from './home.component';
 import { NewCatalogoserviciosComponent } from './new-catalogoservicios/new-catalogoservicios.component';
 import { ExternalizacionComponent } from './externalizacion/externalizacion.component';
 import { NewActividadexternalizacionComponent } from './new-actividadexternalizacion/new-actividadexternalizacion.component';
+import { LoginComponent } from '../layout/login/login.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
+  // { path: '', component: HomeComponent }, 
   { path: 'catalogo', component: NewCatalogoserviciosComponent },
   { path: 'externalizacion', component: ExternalizacionComponent },
   { path: 'newActividadExternalizacion', component: NewActividadexternalizacionComponent },
