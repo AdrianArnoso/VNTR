@@ -18,6 +18,7 @@ export class FormCatalogoserviciosComponent {
   });
 
   @Input() negocios;
+  @Input() responsables;
 
   constructor(private fb: FormBuilder) { }
 

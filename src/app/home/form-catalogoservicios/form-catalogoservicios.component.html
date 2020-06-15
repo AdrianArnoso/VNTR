@@ -20,7 +20,11 @@
 
           <mat-form-field appearance="standard" class="less-width">
             <mat-label>Responsable</mat-label>
-            <input matInput formControlName="responsable"/>
+          <mat-select formControlName="responsable">
+            <mat-option *ngFor="let responsable of responsables" [value]="responsable.id">
+              {{ responsable.name }}
+            </mat-option>
+          </mat-select>
             <mat-error
               *ngIf="catalogoForm.controls['responsable'].hasError('required')"
             >

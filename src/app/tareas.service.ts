@@ -18,6 +18,14 @@ export class TareasService {
     ];
   }
 
+  getResponsables() {
+    return [
+      { id: 0, name: 'Arnoso' },
+      { id: 1, name: 'Quijano' },
+      { id: 2, name: 'Fraga' },
+    ];
+  }
+
   getEmpresasExternalizadas() {
     return [
       { id: 0, name: 'ALAMO' },

@@ -8,6 +8,7 @@ import { TareasService } from 'src/app/tareas.service';
 })
 export class NewCatalogoserviciosComponent implements OnInit {
   negocios = this.tareasService.getNegocios();
+  responsables = this.tareasService.getResponsables();
 
 
   constructor(private tareasService: TareasService) { }
