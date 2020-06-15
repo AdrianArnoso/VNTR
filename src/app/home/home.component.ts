@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort } from '@angular/material/sort';
+import { TareasService } from '../tareas.service';
 
 export interface Servicios {
   name: string;
@@ -26,8 +27,11 @@ const ELEMENT_DATA: Servicios[] = [
 })
 export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
+  rol: boolean;
 
-  constructor() { }
+  constructor(tareasService: TareasService) { 
+    this.rol = tareasService.getRol();
+  }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
