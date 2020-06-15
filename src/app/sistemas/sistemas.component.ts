@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild,} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'abanca-sistemas',
@@ -11,7 +12,7 @@ export class SistemasComponent implements OnInit {
   columnas: string[] = ['id','sistemaInformacion','criticidad','borrar'];
 
   @ViewChild(MatSort) sort: MatSort;
-
+  rol: boolean;
 
   datos: Sistema [] = [
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},
@@ -21,9 +22,11 @@ export class SistemasComponent implements OnInit {
     {id: 'SI00005', sistemaInformacion: 'Sistema de información de mensajería y colaboración', criticidad: 'No'},
     {id: 'SI00006', sistemaInformacion: 'Sistema de información de gestión operativa', criticidad: 'No'},
   ];
-  constructor() { 
-    
+
+  constructor(tareasService: TareasService) { 
+    this.rol = tareasService.getRol();
   }
+  
   dataSource = new MatTableDataSource<Sistema>(this.datos);
   ngOnInit() {
    
