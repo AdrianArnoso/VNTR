@@ -25,8 +25,8 @@
         color="primary"
         class="check-margin"
         [disabled] = true
-        [checked] = true
         *ngFor="let familia of familias"
+        [checked] = familia.checked
         [value]="familia.id"
       >
         {{ familia.name }}
