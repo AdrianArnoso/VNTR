@@ -37,7 +37,7 @@ export class ExternalizacionComponent implements OnInit {
     this.rol = tareasService.getRol();
   }
   length = 100;
-  pageSize = 10;
+  pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   
   
