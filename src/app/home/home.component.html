@@ -91,6 +91,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="pageEvent = $event">
+  </mat-paginator>
+
   <mat-card-actions appearance="standard" class="div-button">
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
 
