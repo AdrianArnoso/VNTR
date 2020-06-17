@@ -8,25 +8,26 @@
     <div class="nav-user">
       <abanca-user-info></abanca-user-info>
     </div> -->
+    <div class="languageLogin">
+      <mat-form-field appearance="fill">
+        <mat-label>Idioma</mat-label>
+        <mat-select>
+          <mat-option value="ES" routerLink="/externalizacion">ES</mat-option>
+          <mat-option value="EN">EN</mat-option>
+          <mat-option value="PT">PT</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Idioma</mat-label>
-      <mat-select>
-        <mat-option value="ES" >ES</mat-option>
-        <mat-option value="EN">EN</mat-option>
-        <mat-option value="PT">PT</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <div class="nav-user">
-      <span class="material-icons toolbar-icons">account_circle</span>
-      <span class="material-icons">
-        arrow_drop_down
-      </span>
+      <div class="nav-user">
+        <span class="material-icons toolbar-icons">account_circle</span>
+        <mat-select>
+          <mat-option value="Login" routerLink="/login">Login</mat-option>
+        </mat-select>
+      </div>
     </div>
-    
   </mat-toolbar-row>
 </mat-toolbar>
+
 <nav mat-tab-nav-bar>
   <a mat-tab-link
     *ngFor="let link of navLinks"
