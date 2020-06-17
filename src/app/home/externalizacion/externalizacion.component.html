@@ -89,6 +89,14 @@
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
 
+
+<mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="pageEvent = $event">
+</mat-paginator>
+
+
 <div class="atras" >
   <button  mat-flat-button color="primary" >Atras</button>
   <!-- <div class="buttonsTableCrudModificarEliminar">

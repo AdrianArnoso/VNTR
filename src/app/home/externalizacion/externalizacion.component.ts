@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {  MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from 'src/app/tareas.service';
-
+import { MatPaginator } from '@angular/material/paginator';
   //  export interface Extarnilacion {
   //   Se: String;
   //   Id_Actividad: string;
@@ -36,13 +36,49 @@ export class ExternalizacionComponent implements OnInit {
   constructor(tareasService: TareasService) { 
     this.rol = tareasService.getRol();
   }
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
   
   
    @ViewChild(MatSort) sort: MatSort;
+   @ViewChild(MatPaginator) paginator: MatPaginator;
+    // @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
      datos: Externalizacion[] = [
     {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
-    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'}
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
+    {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
+    
     
    ];
    
@@ -51,6 +87,8 @@ export class ExternalizacionComponent implements OnInit {
   dataSource = new MatTableDataSource<Externalizacion>(this.datos);
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+
   }
 }
 

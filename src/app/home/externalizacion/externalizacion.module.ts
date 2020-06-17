@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatButtonModule,
     MatMenuModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   declarations: [ExternalizacionComponent]
 })
