@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild,} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'abanca-sistemas',
@@ -11,7 +12,12 @@ import { TareasService } from '../tareas.service';
 export class SistemasComponent implements OnInit {
   columnas: string[] = ['id','sistemaInformacion','criticidad','borrar'];
 
+  length = 100;
+  pageSize = 5;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
 
   datos: Sistema [] = [
@@ -29,7 +35,7 @@ export class SistemasComponent implements OnInit {
   
   dataSource = new MatTableDataSource<Sistema>(this.datos);
   ngOnInit() {
-   
+   this.dataSource.paginator = this.paginator;
    this.dataSource.sort = this.sort;
   }
 

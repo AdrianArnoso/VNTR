@@ -61,7 +61,7 @@
         <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
           ELIMINAR
         </button>
-        <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
+        <button mat-flat-button routerLink="newSistema" color='primary'  focusable="false" *ngIf = "rol">
           MODIFICAR
         </button>
         <button mat-flat-button focusable="false" routerLink="verSistema">
@@ -76,12 +76,17 @@
 
 
 </table>
+<mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="pageEvent = $event">
+</mat-paginator>
 
 <br/>
 <mat-card-actions appearance="standard" class="div-button">
   <button mat-flat-button routerLink="newSistema" color='primary' *ngIf="rol">AÑADIR SISTEMA</button>
 </mat-card-actions>
-  
+
 
 
 
