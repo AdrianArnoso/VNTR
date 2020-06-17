@@ -1,11 +1,10 @@
+    <div class="all-width">
+      <label class="flex-div-info">{{ sistema.id }}</label>
 
-<label>{{sistema.id}}</label>
-<label>{{sistema.sistemaInformacion}}</label>
-<label>{{sistema.criticidad}}</label>
+      <label  class="flex-div-info">{{ sistema.sistemaInformacion }}</label>
+      <label  class="flex-div-info">{{ sistema.criticidad }}</label>
+    </div>
 
-
-
-<br/>
 <!--table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <ng-container *ngFor="let columna of columnas" matColumnDef="{{columna.name}}">
@@ -18,23 +17,20 @@
 
 
 </table-->
-
-<section class="check-section">
-  <mat-checkbox color="primary" class="check-margin"
-  *ngFor="let familia of familias" [value]="familia.id">
-  {{ familia.name }}
-</mat-checkbox>
-</section>
-
-  
-
-
-
-
-
-
-
-
-
-
-
+<div class="row">
+  <div class="flex-container">
+    <label class="label-familia">Familias:</label>
+    <section class="check-section">
+      <mat-checkbox
+        color="primary"
+        class="check-margin"
+        [disabled] = true
+        [checked] = true
+        *ngFor="let familia of familias"
+        [value]="familia.id"
+      >
+        {{ familia.name }}
+      </mat-checkbox>
+    </section>
+  </div>
+</div>

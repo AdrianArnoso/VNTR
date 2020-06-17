@@ -1,4 +1,54 @@
-table {
-    width: 100%;
-  }
- 
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flex-div-info {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  margin-top: 19px;
+  margin-left: 10px;
+}
+
+.label-familia{
+  margin-top: 19px;
+  margin-left: 19px;
+  margin-right: 19px;
+}
+
+.all-width {
+  width: 90%;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.check-section {
+  margin-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
+  margin-right: 19px;
+  width:100%;
+}
+
+.check-section mat-checkbox {
+  list-style: none;
+  // flex: 1 1 18%;
+  // flex: 0 0 33.333333%;
+  flex: 0 0 44%;
+}
+
+
+.check-margin{
+  margin: 0 19px;
+  font-size: 16px;
+  float: left;
+}
