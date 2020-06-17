@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface Servicios {
   name: string;
@@ -27,8 +28,13 @@ const ELEMENT_DATA: Servicios[] = [
 })
 export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
   responsables;
+
+  length = 100;
+  pageSize = 5;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
 
   constructor(tareasService: TareasService) {
     this.rol = tareasService.getRol();
@@ -37,6 +43,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   displayedColumns: string[] = ['id', 'name', 'descripcion', 'criticidad', 'responsable', 'negocio', /*'select' ,*/ 'boton'];

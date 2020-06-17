@@ -76,6 +76,11 @@
 
 
 </table>
+<mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="pageEvent = $event">
+</mat-paginator>
 
 <br/>
 <mat-card-actions appearance="standard" class="div-button">
