@@ -20,6 +20,9 @@
   <div>
     <strong>STI01 - Desarollo y mantenimeineto de Software </strong>
     <div class="buttonsCrud">
+      <div class="buttonsCrudModificarEliminar">
+      <button   mat-flat-button color="primary">Descargar Excel</button>
+      </div>
       <button   mat-flat-button color routerLink="/newActividadExternalizacion" color="primary" *ngIf = "rol">Nueva Actividad</button>
     </div>
   </div>
@@ -74,7 +77,7 @@
       <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
         ELIMINAR
       </button>
-      <button mat-flat-button routerLink="/newActividadExternalizacion" color='primary'  focusable="false" *ngIf = "rol">
+      <button mat-flat-button routerLink="/newActividadExternalizacion"  color='primary'  focusable="false" *ngIf = "rol">
         MODIFICAR
       </button>
     </mat-cell>
