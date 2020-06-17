@@ -7,6 +7,7 @@ import { MatSortModule, MatButtonModule, MatTableModule, MatToolbarModule, MatTa
 import { NewSistemaComponent } from './new-sistema/new-sistema.component';
 import { FormSistemaComponent } from './form-sistema/form-sistema.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { VerSistemaComponent } from './ver-sistema/ver-sistema.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatInputModule,
     MatCheckboxModule
   ],
-  declarations: [SistemasComponent, NewSistemaComponent, FormSistemaComponent],
-  exports: [SistemasComponent, NewSistemaComponent, FormSistemaComponent]
+  declarations: [SistemasComponent, NewSistemaComponent, FormSistemaComponent,VerSistemaComponent],
+  exports: [SistemasComponent, NewSistemaComponent, FormSistemaComponent,VerSistemaComponent]
 })
 export class SistemasModule { }
