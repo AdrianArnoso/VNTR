@@ -3,6 +3,7 @@ import {  MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from 'src/app/tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
+import * as XLSX from 'xlsx';
   //  export interface Extarnilacion {
   //   Se: String;
   //   Id_Actividad: string;
@@ -32,6 +33,7 @@ export class ExternalizacionComponent implements OnInit {
 
   displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra','Buttons'];
   rol: boolean;
+  fileName= 'Externalizaciones.xlsx';  
   // dataSource = ELEMENT_DATA02;
   constructor(tareasService: TareasService) { 
     this.rol = tareasService.getRol();
@@ -89,6 +91,17 @@ export class ExternalizacionComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 
+  }
+  exportexcel(): void {
+       
+    let element = document.getElementById('excel-table'); 
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    XLSX.writeFile(wb, this.fileName);
+   
   }
 }
 
