@@ -4,6 +4,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
+import * as XLSX from 'xlsx';
 
 export interface Servicios {
   name: string;
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
   responsables;
+  fileName= 'CatalogoServicios.xlsx';  
 
   length = 100;
   pageSize = 5;
@@ -49,6 +51,18 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'descripcion', 'criticidad', 'responsable', 'negocio', /*'select' ,*/ 'boton'];
   dataSource = new MatTableDataSource<Servicios>(ELEMENT_DATA);
   selection = new SelectionModel<Servicios>(true, []);
+
+  exportexcel(): void {
+       
+    let element = document.getElementById('excel-table'); 
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    XLSX.writeFile(wb, this.fileName);
+   
+  }
 
 }
 

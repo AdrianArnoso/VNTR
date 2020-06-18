@@ -37,7 +37,7 @@
     </mat-card-actions>
   </div>
 
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" id="excel-table">
 
     <!-- Id Column -->
     <ng-container matColumnDef="id">
@@ -87,6 +87,8 @@
       </td>
     </ng-container>
 
+    
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -96,6 +98,8 @@
                [pageSizeOptions]="pageSizeOptions"
                (page)="pageEvent = $event">
   </mat-paginator>
+  <!-- Boton exportar Excel -->
+  <button mat-flat-button color="primary" (click)="exportexcel()" >Exportar a Excel</button>
 
   <mat-card-actions appearance="standard" class="div-button">
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
