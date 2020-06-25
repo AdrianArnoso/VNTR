@@ -5,6 +5,8 @@ import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
 import * as XLSX from 'xlsx';
+import { ApiService } from '../api.service';
+import { Observable } from 'rxjs';
 
 export interface Servicios {
   name: string;
@@ -38,9 +40,13 @@ export class HomeComponent implements OnInit {
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
-  constructor(tareasService: TareasService) {
+  patataList$: Observable<any[]>;
+
+  constructor(tareasService: TareasService, apiService: ApiService) {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
+
+    this.patataList$ = apiService.getPatata$();
   }
 
   ngOnInit() {

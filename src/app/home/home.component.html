@@ -103,7 +103,10 @@
 
   <mat-card-actions appearance="standard" class="div-button">
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
-
-
   </mat-card-actions>
+  <mat-nav-list *ngIf="patataList$ | async as patataList; else empty">
+    <a *ngFor="let patata of patataList" mat-list-item >
+      {{ patata.summary }}
+    </a>
+  </mat-nav-list>
 </form>
