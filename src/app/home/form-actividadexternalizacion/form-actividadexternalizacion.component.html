@@ -1,4 +1,4 @@
-<form [formGroup]="actExternalizacionForm" novalidate>
+<form [formGroup]="actExternalizacionForm" novalidate (ngSubmit)="SaveNewActividadExternalizacion()">
   <mat-card>
     <mat-card-header>
       <mat-card-title class="title-text"
