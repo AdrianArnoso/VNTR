@@ -104,9 +104,16 @@
   <mat-card-actions appearance="standard" class="div-button">
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
   </mat-card-actions>
-  <mat-nav-list *ngIf="patataList$ | async as patataList; else empty">
-    <a *ngFor="let patata of patataList" mat-list-item >
-      {{ patata.summary }}
+  <mat-nav-list *ngIf="serviciosList$ | async as serviciosList; else empty">
+    <a *ngFor="let servicio of serviciosList" mat-list-item >
+      {{ servicio.id }}
+      {{ servicio.name }}
+      {{servicio.descripcion}}
+      {{servicio.criticidad}}
+      {{servicio.responsable}}
+      {{servicio.negocio}}
     </a>
   </mat-nav-list>
+
+
 </form>

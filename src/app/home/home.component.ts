@@ -24,6 +24,7 @@ const ELEMENT_DATA: Servicios[] = [
 
 ];
 
+
 @Component({
   selector: 'abanca-home',
   templateUrl: './home.component.html',
@@ -39,14 +40,16 @@ export class HomeComponent implements OnInit {
   length = 100;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
+  
 
-  patataList$: Observable<any[]>;
+
+  serviciosList$: Observable<any[]>;
 
   constructor(tareasService: TareasService, apiService: ApiService) {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
 
-    this.patataList$ = apiService.getPatata$();
+    this.serviciosList$ = apiService.getServicios$();
   }
 
   ngOnInit() {

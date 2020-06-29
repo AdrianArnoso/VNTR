@@ -7,11 +7,11 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
 
-  private path = 'https://localhost:5001/patata';
+  private path = 'https://localhost:5001/Adrian';
 
   constructor(private http: HttpClient) { }
 
-  getPatata$() {
+  getServicios$() {
     return this.http.get<any[]>(this.path).pipe(map(data => (data ? data : [])));
   }
 
