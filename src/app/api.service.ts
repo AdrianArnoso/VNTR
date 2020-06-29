@@ -21,5 +21,8 @@ export class ApiService {
     return this.http.post<any>(url,datos);  
   }
 
+  getSistemas$() {
+    return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : [])));
+  }
 
 }
