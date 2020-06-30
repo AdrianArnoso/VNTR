@@ -1,0 +1,52 @@
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flex-container > mat-form-field {
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.most-width {
+  width: 70%;
+}
+.less-width {
+  width: 30%;
+}
+
+.width-radio {
+  width: 23%;
+}
+
+.text-width {
+  width: 50%;
+}
+
+.div-button{
+  float: right;
+  margin-right: 10px;
+}
+
+button{
+  opacity: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 3px;
+}
+
+.title-text{
+  font-size: 20px;
+}
+

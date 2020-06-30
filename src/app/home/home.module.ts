@@ -54,6 +54,8 @@ import { MatFormFieldModule } from '@angular/material';
 import { ExternalizacionComponent } from './externalizacion/externalizacion.component';
 import { NewActividadexternalizacionComponent } from './new-actividadexternalizacion/new-actividadexternalizacion.component';
 import { FormActividadexternalizacionComponent } from './form-actividadexternalizacion/form-actividadexternalizacion.component';
+import { ModifyCatalogoserviciosComponent } from './modify-catalogoservicios/modify-catalogoservicios.component';
+import { FormModifyCatalogoserviciosComponent } from './form-modify-catalogoservicios/form-modify-catalogoservicios.component';
 
 @NgModule({
   imports: [
@@ -106,6 +108,6 @@ import { FormActividadexternalizacionComponent } from './form-actividadexternali
     MatFormFieldModule,
 
   ],
-  declarations: [HomeComponent, FormCatalogoserviciosComponent, NewCatalogoserviciosComponent,ExternalizacionComponent, NewActividadexternalizacionComponent, FormActividadexternalizacionComponent]
+  declarations: [HomeComponent, FormCatalogoserviciosComponent, NewCatalogoserviciosComponent,ExternalizacionComponent, NewActividadexternalizacionComponent, FormActividadexternalizacionComponent, ModifyCatalogoserviciosComponent, FormModifyCatalogoserviciosComponent]
 })
 export class HomeModule { }

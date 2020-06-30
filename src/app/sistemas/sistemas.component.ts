@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'abanca-sistemas',
@@ -20,7 +21,12 @@ export class SistemasComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
 
-  datos: Sistema [] = [
+  dataSource: MatTableDataSource<Sistema>;
+  datos$ : any = this.apiService.getSistemas$().then(data =>{
+    this.dataSource = new MatTableDataSource<Sistema>(data)}
+  );
+
+  /*[
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},
     {id: 'SI00002', sistemaInformacion: 'Sistema de información CRM operativo', criticidad: 'No'},
     {id: 'SI00003', sistemaInformacion: 'Sistema de información CRM analítico', criticidad: 'No'},
@@ -28,12 +34,12 @@ export class SistemasComponent implements OnInit {
     {id: 'SI00005', sistemaInformacion: 'Sistema de información de mensajería y colaboración', criticidad: 'No'},
     {id: 'SI00006', sistemaInformacion: 'Sistema de información de gestión operativa', criticidad: 'No'},
   ];
-
-  constructor(tareasService: TareasService) { 
+*/
+  constructor(private apiService: ApiService,tareasService: TareasService) { 
     this.rol = tareasService.getRol();
   }
   
-  dataSource = new MatTableDataSource<Sistema>(this.datos);
+  
   ngOnInit() {
    this.dataSource.paginator = this.paginator;
    this.dataSource.sort = this.sort;

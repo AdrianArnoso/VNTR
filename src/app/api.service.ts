@@ -22,7 +22,7 @@ export class ApiService {
   }
 
   getSistemas$() {
-    return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : [])));
+    return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : []))).toPromise();
   }
 
 }

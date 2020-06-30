@@ -18,8 +18,6 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <!-- <mat-label>Responsable</mat-label>
-        <input matInput placeholder="Responsable"/> -->
         <mat-label>Responsable</mat-label>
           <mat-select >
             <mat-option *ngFor="let responsable of responsables" [value]="responsable.id">
@@ -39,61 +37,43 @@
 
   <!-- tabla -->
   <table mat-table  matSort class="mat-elevation-z8" id="excel-table"
-
   *ngIf="serviciosList$ | async as serviciosList" [dataSource]="serviciosList">
-
 
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th> -->
-      <!-- <td mat-cell *ngFor="let servicio of serviciosList"> {{servicio.id}} </td> -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}}
-        <!-- <ng-container *ngFor="let s of serviciosList" >
-          {{s.id[row]}}
-      </ng-container> -->
-      </td>
-
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
     <!-- Servicio Tecnológico -->
     <ng-container matColumnDef="name">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> Servicio Tecnológico </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td> -->
+
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Servicio Tecnológico </th>
-      <td mat-cell *matCellDef="let row"> {{row.name}}
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
     </ng-container>
 
     <!-- Descripcion Column -->
     <ng-container matColumnDef="descripcion">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
-      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td> -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Descripcion </th>
-      <td mat-cell *matCellDef="let row"> {{row.descripcion}}
+      <td mat-cell *matCellDef="let row"> {{row.descripcion}} </td>
     </ng-container>
 
     <!-- Criticidad Column -->
     <ng-container matColumnDef="criticidad">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> Criticidad </th>
-      <td mat-cell *matCellDef="let element"> {{element.criticidad}} </td> -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Criticidad </th>
-      <td mat-cell *matCellDef="let row"> {{row.criticidad}}
+      <td mat-cell *matCellDef="let row"> {{row.criticidad}} </td>
     </ng-container>
 
     <!-- Responsable Column -->
     <ng-container matColumnDef="responsable">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> Responsable </th>
-      <td mat-cell *matCellDef="let element"> {{element.responsable}} </td> -->
-     <th mat-header-cell *matHeaderCellDef mat-sort-header > Responsable </th>
-      <td mat-cell *matCellDef="let row"> {{row.responsable}}
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > Responsable </th>
+      <td mat-cell *matCellDef="let row"> {{row.responsable}} </td>
     </ng-container>
 
     <!-- Negocio Column -->
     <ng-container matColumnDef="negocio">
-      <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> Negocio </th>
-      <td mat-cell *matCellDef="let element"> {{element.negocio}} </td> -->
       <th mat-header-cell *matHeaderCellDef mat-sort-header > Negocio </th>
-      <td mat-cell *matCellDef="let row"> {{row.negocio}}
+      <td mat-cell *matCellDef="let row"> {{row.negocio}} </td>
     </ng-container>
 
     <!-- Botones Column -->
@@ -103,50 +83,25 @@
         <mat-card-actions appearance="standard" class="">
           <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button>
           <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button>
-          <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">MODIFICAR</button>
+          <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button>
         </mat-card-actions>
       </td>
     </ng-container>
 
-
-
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
 
   <mat-paginator [length]="length"
                [pageSize]="pageSize"
                [pageSizeOptions]="pageSizeOptions"
                (page)="pageEvent = $event">
   </mat-paginator>
-  <!-- Boton exportar Excel -->
-  <button mat-flat-button color="primary" (click)="exportexcel()" >Exportar a Excel</button>
 
+  <!-- Boton export Excel & add service-->
   <mat-card-actions appearance="standard" class="div-button">
+    <button mat-flat-button color="primary" (click)="exportexcel()" >EXPORTAR EXCEL</button>
     <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">AÑADIR SERVICIO</button>
   </mat-card-actions>
-
-
-
-
-
-  <!-- Tabla de pruebas -->
-  <!-- <mat-nav-list *ngIf="serviciosList$ | async as serviciosList; else empty">
-    <mat-list-item *ngFor="let servicio of serviciosList"  >
-      {{ servicio.id }}
-      {{ servicio.name }}
-      {{ servicio.descripcion }}
-      {{ servicio.criticidad }}
-      {{ servicio.responsable }}
-      {{ servicio.negocio }}
-    </mat-list-item>
-  </mat-nav-list> -->
-
-
-
-
-
 
 </form>
