@@ -83,7 +83,7 @@
         <mat-card-actions appearance="standard" class="">
           <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button>
           <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button>
-          <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol">MODIFICAR</button>
+          <button mat-flat-button routerLink="/catalogo" color="primary" *ngIf = "rol" (click)="obtener(row.id)">MODIFICAR</button>
         </mat-card-actions>
       </td>
     </ng-container>

@@ -64,6 +64,9 @@ export class HomeComponent implements OnInit {
     XLSX.writeFile(wb, this.fileName);
    
   }
+  obtener(id){
+    console.log("value: " + id);
+  }
 
 }
 
