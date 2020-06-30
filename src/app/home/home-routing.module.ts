@@ -5,12 +5,14 @@ import { NewCatalogoserviciosComponent } from './new-catalogoservicios/new-catal
 import { ExternalizacionComponent } from './externalizacion/externalizacion.component';
 import { NewActividadexternalizacionComponent } from './new-actividadexternalizacion/new-actividadexternalizacion.component';
 import { LoginComponent } from '../layout/login/login.component';
+import { ModifyCatalogoserviciosComponent } from './modify-catalogoservicios/modify-catalogoservicios.component';
 
 
 const routes: Routes = [
   // { path: '', component: LoginComponent },
-  { path: '', component: HomeComponent }, 
+  { path: '', component: HomeComponent },
   { path: 'catalogo', component: NewCatalogoserviciosComponent },
+  { path: 'modCatalogo/:id', component: ModifyCatalogoserviciosComponent },
   { path: 'externalizacion', component: ExternalizacionComponent },
   { path: 'newActividadExternalizacion', component: NewActividadexternalizacionComponent },
 ];
