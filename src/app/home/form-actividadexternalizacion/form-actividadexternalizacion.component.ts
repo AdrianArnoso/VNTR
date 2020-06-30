@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'abanca-form-actividadexternalizacion',
@@ -19,7 +20,10 @@ export class FormActividadexternalizacionComponent {
     });
 
   @Input() empresas;
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private apiServices: ApiService
+    ) { }
 
   ngOnInit() {
   }
@@ -30,6 +34,11 @@ export class FormActividadexternalizacionComponent {
     }else if(option == false){
       this.disabledCheck = true;
     }
+  }
+  SaveNewActividadExternalizacion(){
+    console.log(this.actExternalizacionForm.value);
+    this.apiServices.postActividadExternalizacion(this.actExternalizacionForm.value);
+    
   }
 
 }
