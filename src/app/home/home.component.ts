@@ -18,12 +18,11 @@ export interface Servicios {
 }
 
 const ELEMENT_DATA: Servicios[] = [
-  {id: "STI01", name: 'Desarrollo y Mantenimiento de Software', descripcion: "", criticidad: 'B', responsable: "Arnoso", negocio: "ABANCA España"},
-  {id: "STI02", name: 'Implantación y Configuración de Productos', descripcion: "", criticidad: 'C', responsable: "Quijano", negocio: "ABANCA USA"},
-  {id: "STI03", name: 'Instalación y retirada de equipamiento TIC', descripcion: "", criticidad: 'C', responsable: "Fraga", negocio: "ABANCA Portugal"},
+  // {id: "STI05", name: 'Desarrollo y Mantenimiento de Software', descripcion: "", criticidad: 'B', responsable: "Arnoso", negocio: "ABANCA España"},
+  // {id: "STI06", name: 'Implantación y Configuración de Productos', descripcion: "", criticidad: 'C', responsable: "Quijano", negocio: "ABANCA USA"},
+  // {id: "STI07", name: 'Instalación y retirada de equipamiento TIC', descripcion: "", criticidad: 'C', responsable: "Fraga", negocio: "ABANCA Portugal"},
 
 ];
-
 
 @Component({
   selector: 'abanca-home',
@@ -36,19 +35,14 @@ export class HomeComponent implements OnInit {
   rol: boolean;
   responsables;
   fileName= 'CatalogoServicios.xlsx';  
-
   length = 100;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
-  
-
-
   serviciosList$: Observable<any[]>;
 
   constructor(tareasService: TareasService, apiService: ApiService) {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
-
     this.serviciosList$ = apiService.getServicios$();
   }
 
@@ -65,10 +59,8 @@ export class HomeComponent implements OnInit {
        
     let element = document.getElementById('excel-table'); 
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
-
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
     XLSX.writeFile(wb, this.fileName);
    
   }
