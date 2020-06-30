@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 
   private path = 'https://localhost:5001/Adrian';
-  URL_ACTIVIDADE_EXTERNALIZACION ="https://localhost:5001/postActividadExternalizacion";
+  URL_ACTIVIDADE_EXTERNALIZACION ="https://localhost:5001/Adrian/postActividadExternalizacion";
 
   constructor(private http: HttpClient) { }
 
