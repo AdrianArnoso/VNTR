@@ -19,6 +19,9 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
 
   @Input() negocios;
   @Input() responsables;
+  @Input() servicio$;
+
+
 
   constructor(private fb: FormBuilder) { }
 

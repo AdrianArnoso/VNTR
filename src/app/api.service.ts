@@ -15,6 +15,12 @@ export class ApiService {
   getServicios$() {
     return this.http.get<any[]>(this.path).pipe(map(data => (data ? data : [])));
   }
+  getServicioById$(id) {
+    return this.http
+      .get<any>(this.path + '/' + id)
+      .pipe(map(data => (data ? data : {})));
+  }
+
   postActividadExternalizacion(datos){
     console.log(datos);
     const url = this.URL_ACTIVIDADE_EXTERNALIZACION;
