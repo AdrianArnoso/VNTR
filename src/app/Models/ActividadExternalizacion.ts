@@ -1,4 +1,4 @@
-export interface ActividadExternalizacionInterface {
+export interface IActividadExternalizacion {
     
     actividadServicio_es?: string;
     actividadServicio_en?: string;

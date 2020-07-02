@@ -36,7 +36,7 @@ export class FormActividadexternalizacionComponent {
     }
   }
   SaveNewActividadExternalizacion(){
-    console.log(this.actExternalizacionForm.value);
+    //console.log(this.actExternalizacionForm.value);
     return this.apiServices.postActividadExternalizacion(this.actExternalizacionForm.value).subscribe();
     
   }
