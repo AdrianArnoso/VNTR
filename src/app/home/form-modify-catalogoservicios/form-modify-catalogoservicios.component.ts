@@ -19,13 +19,22 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
 
   @Input() negocios;
   @Input() responsables;
-  @Input() servicio$;
+  @Input() servicios;
+
+  selectedCrit = "";
+  selectedResp = "";
+  selectedNeg = "";
 
 
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    console.log(this.servicios);
+    this.selectedCrit = this.servicios[0].criticidad.toLowerCase();
+    this.selectedResp = this.servicios[0].responsable;
+    this.selectedNeg = this.servicios[0].negocio;
+    console.log("Selected " + this.selectedNeg );
   }
 
 

@@ -36,57 +36,87 @@
   </div>
 
   <!-- tabla -->
-  <table mat-table  matSort class="mat-elevation-z8" id="excel-table"
+  <table mat-table  matSort id="excel-table"
   *ngIf="serviciosList$ | async as serviciosList" [dataSource]="serviciosList">
 
     <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    <div class="row">
+      <div class="flex-container">
+    <ng-container matColumnDef="id" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width" > ID </th>
+      <td mat-cell *matCellDef="let row" class="less-width"> {{row.id}} </td>
     </ng-container>
+      </div>
+    </div>
 
     <!-- Servicio Tecnológico -->
+    <div class="row">
+      <div class="flex-container">
     <ng-container matColumnDef="name">
 
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Servicio Tecnológico </th>
-      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="most-width"> Servicio Tecnológico </th>
+      <td mat-cell *matCellDef="let row" class="most-width"> {{row.name}} </td>
     </ng-container>
+    </div>
+    </div>
 
     <!-- Descripcion Column -->
-    <ng-container matColumnDef="descripcion">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Descripcion </th>
-      <td mat-cell *matCellDef="let row" class="descripcionColumn"> {{row.descripcion}} </td>
+    <div class="row">
+      <div class="flex-container">
+    <ng-container matColumnDef="descripcion" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="most-width"> Descripcion </th>
+      <td mat-cell *matCellDef="let row" class="descripcionColumn" class="most-width"> {{row.descripcion}} </td>
     </ng-container>
+
+      </div>
+    </div>
 
     <!-- Criticidad Column -->
-    <ng-container matColumnDef="criticidad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Criticidad </th>
-      <td mat-cell *matCellDef="let row"> {{row.criticidad}} </td>
+    <div class="row">
+      <div class="flex-container">
+    <ng-container matColumnDef="criticidad" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width"> Criticidad </th>
+      <td mat-cell *matCellDef="let row" class="less-width"> {{row.criticidad}} </td>
     </ng-container>
+      </div>
+    </div>
 
     <!-- Responsable Column -->
+    <div class="row">
+      <div class="flex-container">
     <ng-container matColumnDef="responsable">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Responsable </th>
-      <td mat-cell *matCellDef="let row"> {{row.responsable}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header  class="medium-width"> Responsable </th>
+      <td mat-cell *matCellDef="let row" class="medium-width"> {{row.responsable}} </td>
     </ng-container>
+      </div>
+    </div>
 
     <!-- Negocio Column -->
-    <ng-container matColumnDef="negocio">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Negocio </th>
-      <td mat-cell *matCellDef="let row"> {{row.negocio}} </td>
+    <div class="row">
+      <div class="flex-container">
+    <ng-container matColumnDef="negocio" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="medium-width" > Negocio </th>
+      <td mat-cell *matCellDef="let row" class="medium-width"> {{row.negocio}} </td>
     </ng-container>
+      </div>
+    </div>
 
     <!-- Botones Column -->
-    <ng-container matColumnDef="boton">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-      <td mat-cell *matCellDef="let row">
-        <mat-card-actions appearance="standard" class="">
-          <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button>
-          <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button>
-          <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button>
-        </mat-card-actions>
-      </td>
-    </ng-container>
+    <div class="row">
+      <div class="flex-container">
+        <ng-container matColumnDef="boton" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let row">
+            <mat-card-actions appearance="standard" class="button-table">
+              <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button>
+              <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button>
+              <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button>
+            </mat-card-actions>
+          </td>
+        </ng-container>
+      </div>
+    </div>
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
