@@ -1,7 +1,7 @@
-<form [formGroup]="catalogoForm" novalidate>
-  <mat-card>
+<form [formGroup]="catalogoForm" novalidate *ngIf="servicio$ | async as serviciosList; else empty">
+  <mat-card *ngFor="let servicio of serviciosList">
     <mat-card-header>
-      <mat-card-title class="title-text">Nuevo/Modificar Servicio</mat-card-title>
+      <mat-card-title class="title-text">Modificar Servicio</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-divider></mat-divider>
@@ -10,7 +10,7 @@
         <div class="flex-container">
           <mat-form-field appearance="standard" class="most-width">
             <mat-label>Catálogo de Servicios</mat-label>
-            <input matInput formControlName="catalogo_servicios_es" />
+            <input matInput formControlName="catalogo_servicios_es" value="{{ servicio.name }}" />
             <mat-error
               *ngIf="catalogoForm.controls['catalogo_servicios_es'].hasError('required')"
             >
@@ -74,7 +74,7 @@
         <div class="flex-container">
           <mat-form-field appearance="standard" class="text-width" >
             <mat-label>Descripción</mat-label>
-            <textarea matInput matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10 formControlName="descripcion_es"></textarea>
+            <textarea matInput matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10 formControlName="descripcion_es" value="{{ servicio.descripcion }}"></textarea>
 
             <mat-error
               *ngIf="catalogoForm.controls['descripcion_es'].hasError('required')"
@@ -100,10 +100,11 @@
         <div class="flex-container">
         <mat-form-field appearance="standard" class="width-radio">
           <mat-label>Criticidad</mat-label>
-          <mat-select formControlName="criticidad">
+          <mat-select formControlName="criticidad" >
             <mat-option value="a">A</mat-option>
             <mat-option value="b">B</mat-option>
             <mat-option value="c">C</mat-option>
+            <mat-option value="{{ servicio.criticidad }}" selected>{{ servicio.criticidad }}</mat-option>
           </mat-select>
           <mat-error
           *ngIf="catalogoForm.controls['criticidad'].hasError('required')"
@@ -122,5 +123,21 @@
   </mat-card-actions>
 
   </mat-card>
+
+    <div>
+      Recojo del server: 
+      
+    </div>
+
+    <mat-nav-list *ngIf="servicio$ | async as serviciosList; else empty">
+      <a *ngFor="let servicio of serviciosList" mat-list-item >
+        {{ servicio.id }}
+        {{ servicio.name }}
+        {{servicio.descripcion}}
+        {{servicio.criticidad}}
+        {{servicio.responsable}}
+        {{servicio.negocio}}
+      </a>
+    </mat-nav-list>
 </form>
 
