@@ -1,1 +1,1 @@
-<abanca-form-modify-catalogoservicios [negocios] = "negocios" [responsables] = "responsables" [servicio$]="serviceById$"></abanca-form-modify-catalogoservicios>
+<abanca-form-modify-catalogoservicios [negocios] = "negocios" [responsables] = "responsables" *ngIf="serviceById$ | async as serviceById" [servicios]="serviceById" ></abanca-form-modify-catalogoservicios>

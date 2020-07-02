@@ -1,5 +1,5 @@
-<form [formGroup]="catalogoForm" novalidate *ngIf="servicio$ | async as serviciosList; else empty">
-  <mat-card *ngFor="let servicio of serviciosList">
+<form [formGroup]="catalogoForm" novalidate>
+  <mat-card *ngFor="let servicio of servicios">
     <mat-card-header>
       <mat-card-title class="title-text">Modificar Servicio</mat-card-title>
     </mat-card-header>
@@ -129,8 +129,8 @@
       
     </div>
 
-    <mat-nav-list *ngIf="servicio$ | async as serviciosList; else empty">
-      <a *ngFor="let servicio of serviciosList" mat-list-item >
+    <mat-nav-list>
+      <a *ngFor="let servicio of servicios" mat-list-item >
         {{ servicio.id }}
         {{ servicio.name }}
         {{servicio.descripcion}}

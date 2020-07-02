@@ -19,13 +19,14 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
 
   @Input() negocios;
   @Input() responsables;
-  @Input() servicio$;
+  @Input() servicios;
 
 
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    console.log(this.servicios);
   }
 
 
