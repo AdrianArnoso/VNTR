@@ -23,7 +23,9 @@ export class SistemasComponent implements OnInit {
 
   dataSource: MatTableDataSource<Sistema>;
   datos$ : any = this.apiService.getSistemas$().then(data =>{
-    this.dataSource = new MatTableDataSource<Sistema>(data)}
+    this.dataSource = new MatTableDataSource<Sistema>(data);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;}
   );
 
   /*[
@@ -41,8 +43,7 @@ export class SistemasComponent implements OnInit {
   
   
   ngOnInit() {
-   this.dataSource.paginator = this.paginator;
-   this.dataSource.sort = this.sort;
+   
   }
 
 }
