@@ -3,27 +3,77 @@ table {
   width: 100%;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.less-width {
+  width: 6%;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: blue;
+  /* IMPORTANTE */
+  text-align: left;
+
+}
+
+.most-width {
+  width: 22%;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: yellow;
+  /* IMPORTANTE */
+  text-align: left;
+
+}
+
+.medium-width {
+  width: 10%;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: pink;
+  /* IMPORTANTE */
+  text-align: left;
+
+}
+
+.button-table {
+  width: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: orange;
+  /* IMPORTANTE */
+  float: right;
+
+}
+
 .mat-form-field {
   font-size: 14px;
   margin-inline-start: 20px;
 }
 .mat-flat-button{
-  
+
   float: right;
   margin-right: 10px;
 }
 
 .div-button{
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  
+  float: right;
+  margin-right: 10px;
+}
+
 button{
-    opacity: 100%;
-    font-size: 14px;
-    border-radius: 8px;
-    margin: 3px;
+  opacity: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 3px;
 }
 .descripcionColumn{
   max-width: 200px;
