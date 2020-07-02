@@ -21,6 +21,7 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
   @Input() responsables;
   @Input() servicio$;
 
+  selected = "c";
 
 
   constructor(private fb: FormBuilder) { }

@@ -100,11 +100,11 @@
         <div class="flex-container">
         <mat-form-field appearance="standard" class="width-radio">
           <mat-label>Criticidad</mat-label>
-          <mat-select formControlName="criticidad" >
+          <!-- <mat-select formControlName="criticidad" [(value)]="selected" > -->
+          <mat-select  [(value)]="selected" >
             <mat-option value="a">A</mat-option>
             <mat-option value="b">B</mat-option>
             <mat-option value="c">C</mat-option>
-            <mat-option value="{{ servicio.criticidad }}" selected>{{ servicio.criticidad }}</mat-option>
           </mat-select>
           <mat-error
           *ngIf="catalogoForm.controls['criticidad'].hasError('required')"
