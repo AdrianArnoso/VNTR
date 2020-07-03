@@ -168,9 +168,9 @@
     <!-- Botones Column -->
 
         <ng-container matColumnDef="boton">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header ></th>
           <td mat-cell *matCellDef="let row">
-            <mat-card-actions appearance="standard" class="button-table">
+            <mat-card-actions class="button-table">
               <a [routerLink]="['/externalizacion', row.id]">
                 <mat-icon matTooltip="Ver Externalización">
                   visibility

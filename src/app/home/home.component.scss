@@ -1,6 +1,11 @@
 /* Structure */
 table {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+th, td{
+  width: 13%;
 }
 
 .flex-container {
@@ -20,9 +25,9 @@ table {
 
 .less-width {
   width: 6%;
-  padding-left: 5px;
+  padding-left: 10px;
   padding-right: 5px;
-  //  background-color: blue;
+  // background-color: blue;
   /* IMPORTANTE */
   text-align: left;
 
@@ -30,9 +35,9 @@ table {
 
 .most-width {
   width: 22%;
-  padding-left: 5px;
-  padding-right: 5px;
-  //  background-color: yellow;
+  padding-left: 15px;
+  padding-right: 3px;
+  // background-color: yellow;
   /* IMPORTANTE */
   text-align: left;
 
@@ -40,18 +45,18 @@ table {
 
 .medium-width {
   width: 10%;
-  padding-left: 5px;
+  padding-left: 40px;
   padding-right: 5px;
-  //  background-color: pink;
+  // background-color: pink;
   /* IMPORTANTE */
   text-align: left;
 
 }
 
 .button-table {
-  width: 35%;
+  width: 80%;
   margin-top: 5px;
-  //  background-color: orange;
+  // background-color: orange;
   /* IMPORTANTE */
   float: right;
 }
@@ -59,6 +64,8 @@ table {
 a {
   display: inline-block;
   margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .red-icon {
