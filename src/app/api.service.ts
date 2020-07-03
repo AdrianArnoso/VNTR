@@ -29,7 +29,7 @@ export class ApiService {
       .pipe(map(data => (data ? data : {})));
   }
   getServicioSearch$(datos){
-    const url = this.path +"/sistemas/"+datos.id;
+    const url = this.path +"/servicios/"+datos.id;
     return this.http.get(url);
 
   }
