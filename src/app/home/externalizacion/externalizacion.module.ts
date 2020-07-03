@@ -11,6 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatButtonModule,
     MatMenuModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule
   ],
   declarations: [ExternalizacionComponent]
 })
