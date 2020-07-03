@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map ,catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
+import { IActividadExternalizacion } from './Models/ActividadExternalizacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
+  
+
   private path = 'https://localhost:5001/Vntr';
-  URL_ACTIVIDADE_EXTERNALIZACION ="https://localhost:5001/Vntr/postActividadExternalizacion";
+  URL_ACTIVIDADE_EXTERNALIZACION ="https://localhost:5001/Vntr/ActividadExternalizacion";
+  private value = "kkkk"
+  headers = { headers: new Headers({ 'Content-Type': 'application/json' }) };
+  handleError: (err: any, caught: Observable<any>) => never;
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +28,15 @@ export class ApiService {
       .pipe(map(data => (data ? data : {})));
   }
 
-  postActividadExternalizacion(datos){
+  postActividadExternalizacion(datos: IActividadExternalizacion): Observable<IActividadExternalizacion>{
     console.log(datos);
     const url = this.URL_ACTIVIDADE_EXTERNALIZACION;
-    return this.http.post<any>(url,datos);  
+    //return this.http.post<any>(url,datos);  
+    //return this.http.post<ActividadExternalizacionInterface>(url,datos ); 
+     
+    //return this.http.post<ActividadExternalizacionInterface>(url,datos).pipe(
+     // catchError(e => throwError(e)));
+     return this.http.post<IActividadExternalizacion>(url,datos);
   }
 
   getSistemas$() {
