@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import * as XLSX from 'xlsx';
 import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
+import { FormBuilder, Validators } from '@angular/forms';
 
 export interface Servicios {
   name: string;
@@ -40,11 +41,19 @@ export class HomeComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
   serviciosList$: Observable<any[]>;
 
-  constructor(tareasService: TareasService, apiService: ApiService) {
+  constructor(tareasService: TareasService, private apiService: ApiService, private fb: FormBuilder) {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
     this.serviciosList$ = apiService.getServicios$();
   }
+
+  actServiciosSearch = this.fb.group({
+    id_servicio: [null, [Validators.required]],
+    name_servicio: [null, [Validators.required]],
+    criticidad_servicio: [null, [Validators.required]],
+    responsable: [null, [Validators.required]],
+    negocio: [null, [Validators.required]],
+    });
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
@@ -63,6 +72,13 @@ export class HomeComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
    
+  }
+  onReset(){
+   this.actServiciosSearch.reset();
+  }
+  SearchServicio(){
+    console.log(this.actServiciosSearch.value);
+    this.apiService.getServicioSearch$(this.actServiciosSearch.value).subscribe();
   }
 
 }
