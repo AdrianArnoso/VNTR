@@ -62,10 +62,10 @@
         <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
           ELIMINAR
         </button>
-        <button mat-flat-button routerLink="newSistema" color='primary'  focusable="false" *ngIf = "rol">
+        <button mat-flat-button routerLink="newSistema" (click)="onclick(sistema[index].id)" color='primary'  focusable="false" *ngIf = "rol">
           MODIFICAR
         </button>
-        <button mat-flat-button focusable="false" routerLink="verSistema">
+        <button mat-flat-button focusable="false" (click)="onclick(sistema[index].id)" routerLink="verSistema">
           VER SISTEMA
         </button>
       </td>

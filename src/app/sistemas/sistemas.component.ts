@@ -48,6 +48,10 @@ export class SistemasComponent implements OnInit {
    
   }
 
+  onClick(id){
+    this.apiService.setSistemaId(id);
+  }
+
 }
 
 export class Sistema {
