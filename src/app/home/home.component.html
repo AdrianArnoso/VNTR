@@ -1,17 +1,17 @@
-<form action="">
+<form [formGroup]="actServiciosSearch" novalidate (ngSubmit)="SearchServicio()">
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
         <mat-label>Id</mat-label>
-        <input matInput placeholder="Id" />
+        <input matInput  formControlName="id_servicio" placeholder="Id" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Servicio Tecnológico</mat-label>
-        <input matInput placeholder="Servicio Tecnológico" />
+        <input matInput formControlName="name_servicio" placeholder="Servicio Tecnológico" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Criticidad</mat-label>
-        <mat-select>
+        <mat-select formControlName="criticidad_servicio">
           <!-- <mat-option value="Todo"></mat-option> -->
           <mat-option value="Si">Si</mat-option>
           <mat-option value="No">No</mat-option>
@@ -19,7 +19,7 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Responsable</mat-label>
-        <mat-select>
+        <mat-select  formControlName="responsable">
           <mat-option
             *ngFor="let responsable of responsables"
             [value]="responsable.id"
@@ -42,12 +42,12 @@
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
         <a class="a-search" >
-          <mat-icon matTooltip="Buscar">
+          <mat-icon matTooltip="Buscar" (click)="SearchServicio()" >
             search
           </mat-icon>
         </a>
         <a class="a-search">
-          <mat-icon matTooltip="Limpiar Filtros">
+          <mat-icon matTooltip="Limpiar Filtros" type="button" (click)="onReset()">
             delete
           </mat-icon>
         </a>

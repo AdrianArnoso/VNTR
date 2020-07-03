@@ -31,9 +31,15 @@
 
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" id="excel-table">
   <!-- Position Column -->
+
+  <!-- <ng-container matColumnDef="Se">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Se </th>
+    <td mat-cell *matCellDef="let element" >  <input id="checkFollower" type="checkbox" ng-checked="leader" aria-label="Follower input"></td>
+  </ng-container> -->
+
   <ng-container matColumnDef="Se">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Se </th>
-    <td mat-cell *matCellDef="let element"> {{element.Se}} </td>
+    <td mat-cell *matCellDef="let element" ></td>
   </ng-container>
 
   <!-- Name Column -->
