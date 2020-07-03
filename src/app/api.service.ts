@@ -13,7 +13,7 @@ export class ApiService {
 
   private path = 'https://localhost:5001/Vntr';
   URL_ACTIVIDADE_EXTERNALIZACION ="https://localhost:5001/Vntr/ActividadExternalizacion";
-  private value = "kkkk"
+  
   headers = { headers: new Headers({ 'Content-Type': 'application/json' }) };
   handleError: (err: any, caught: Observable<any>) => never;
 
@@ -28,7 +28,7 @@ export class ApiService {
       .pipe(map(data => (data ? data : {})));
   }
 
-  postActividadExternalizacion(datos: IActividadExternalizacion): Observable<IActividadExternalizacion>{
+  postActividadExternalizacion$(datos: IActividadExternalizacion): Observable<IActividadExternalizacion>{
     console.log(datos);
     const url = this.URL_ACTIVIDADE_EXTERNALIZACION;
     //return this.http.post<any>(url,datos);  
@@ -42,5 +42,12 @@ export class ApiService {
   getSistemas$() {
     return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : []))).toPromise();
   }
+  getSistemasSearch$(datos){
+    console.log(datos.id_sistema);
+    const url = this.path +"/sismemas/"+datos.id_sistema;
+    console.log(url);
+    return this.http.get<any>(url);
+  }
+  
 
 }

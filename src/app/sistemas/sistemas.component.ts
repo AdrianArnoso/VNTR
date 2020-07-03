@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { TareasService } from '../tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { ApiService } from '../api.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'abanca-sistemas',
@@ -30,6 +31,21 @@ export class SistemasComponent implements OnInit {
     this.dataSource.sort = this.sort;}
   );
 
+  actSistemasSearch = this.fb.group({
+    id_sistema: [null, [Validators.required]],
+    name_sistema: [null, [Validators.required]],
+    criticidad_sistema: [null, [Validators.required]]
+    });
+
+    SearchExternalizacion(){
+      console.log(this.actSistemasSearch.value);
+      return this.apiService.getSistemasSearch$(this.actSistemasSearch.value).subscribe;
+    }
+    onReset(){
+      this.actSistemasSearch.reset();
+      // <console.log("www")>
+    }
+
   /*[
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},
     {id: 'SI00002', sistemaInformacion: 'Sistema de información CRM operativo', criticidad: 'No'},
@@ -39,7 +55,7 @@ export class SistemasComponent implements OnInit {
     {id: 'SI00006', sistemaInformacion: 'Sistema de información de gestión operativa', criticidad: 'No'},
   ];
 */
-  constructor(private apiService: ApiService,tareasService: TareasService) { 
+  constructor(private apiService: ApiService,tareasService: TareasService,private fb: FormBuilder,) { 
     this.rol = tareasService.getRol();
   }
   
