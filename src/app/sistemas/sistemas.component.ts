@@ -21,11 +21,10 @@ export class SistemasComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
 
+
   dataSource: MatTableDataSource<Sistema>;
   datos$ : any = this.apiService.getSistemas$().then(data =>{
     this.dataSource = new MatTableDataSource<Sistema>(data);
-    console.log(data);
-    console.log(data[1].sistemaInformacion);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;}
   );
@@ -48,9 +47,7 @@ export class SistemasComponent implements OnInit {
    
   }
 
-  onClick(id){
-    this.apiService.setSistemaId(id);
-  }
+
 
 }
 

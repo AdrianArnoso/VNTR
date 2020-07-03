@@ -17,7 +17,7 @@ export class FormSistemaComponent  {
     critico: [null, [Validators.required]],
     });
 
-
+    @Input() sistema;
     @Input() familias;
   constructor(private fb: FormBuilder) { }
 

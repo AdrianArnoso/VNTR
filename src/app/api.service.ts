@@ -16,7 +16,6 @@ export class ApiService {
   private value = "kkkk"
   headers = { headers: new Headers({ 'Content-Type': 'application/json' }) };
   handleError: (err: any, caught: Observable<any>) => never;
-  id;
 
   constructor(private http: HttpClient) { }
 
@@ -44,11 +43,9 @@ export class ApiService {
     return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : []))).toPromise();
   }
 
-  getSistemaById$() {
-    return this.http.get<any[]>(this.path + "/sistemas"+"/"+this.id).pipe(map(data => (data ? data : []))).toPromise();
-  }
-  setSistemaId(id){
-    this.id = id;
+  getSistemaById$(id) {
+    console.log(id);
+    return this.http.get<any[]>(this.path + "/sistemas"+"/"+id).pipe(map(data => (data ? data : []))).toPromise();
   }
 
 }
