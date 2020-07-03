@@ -1,43 +1,56 @@
 <form action="">
-  <div>
-    <mat-form-field class="search">
-      <mat-label>Id</mat-label>
-      <input matInput placeholder="Id" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Servicio Tecnológico</mat-label>
-      <input matInput placeholder="Servicio Tecnológico" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Criticidad</mat-label>
-      <mat-select>
-        <mat-option value="Todo"></mat-option>
-        <mat-option value="Si">Si</mat-option>
-        <mat-option value="No">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Responsable</mat-label>
-      <mat-select>
-        <mat-option
-          *ngFor="let responsable of responsables"
-          [value]="responsable.id"
-        >
-          {{ responsable.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Negocio</mat-label>
-      <input matInput placeholder="Negocio" />
-    </mat-form-field>
-    <mat-card-actions appearance="standard" class="mat-flat-button">
-      <button mat-flat-button color="primary">LIMPIAR</button>
-      <button mat-flat-button color="primary">BUSCAR</button>
-    </mat-card-actions>
+  <div class="row">
+    <div class="flex-container">
+      <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="Id" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Servicio Tecnológico</mat-label>
+        <input matInput placeholder="Servicio Tecnológico" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Criticidad</mat-label>
+        <mat-select>
+          <!-- <mat-option value="Todo"></mat-option> -->
+          <mat-option value="Si">Si</mat-option>
+          <mat-option value="No">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Responsable</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let responsable of responsables"
+            [value]="responsable.id"
+          >
+            {{ responsable.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Negocio</mat-label>
+        <input matInput placeholder="Negocio" />
+      </mat-form-field>
+      <mat-card-actions appearance="standard" class="button-search">
+        <a class="a-search" >
+          <mat-icon matTooltip="Buscar">
+            search
+          </mat-icon>
+        </a>
+        <a class="a-search">
+          <mat-icon matTooltip="Limpiar Filtros">
+            delete
+          </mat-icon>
+        </a>
+        <!-- <button mat-flat-button color="primary">LIMPIAR</button>
+        <button mat-flat-button color="primary">BUSCAR</button> -->
+      </mat-card-actions>
+    </div>
   </div>
 
   <!-- tabla -->
+
   <table
     mat-table
     matSort
@@ -46,8 +59,7 @@
     [dataSource]="serviciosList"
   >
     <!-- Id Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="id">
           <th
             mat-header-cell
@@ -61,12 +73,10 @@
             {{ row.id }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Servicio Tecnológico -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="name">
           <th
             mat-header-cell
@@ -80,12 +90,10 @@
             {{ row.name }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Descripcion Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="descripcion">
           <th
             mat-header-cell
@@ -104,12 +112,10 @@
             {{ row.descripcion }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Criticidad Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="criticidad">
           <th
             mat-header-cell
@@ -123,12 +129,10 @@
             {{ row.criticidad }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Responsable Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="responsable">
           <th
             mat-header-cell
@@ -142,12 +146,10 @@
             {{ row.responsable }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Negocio Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="negocio">
           <th
             mat-header-cell
@@ -161,30 +163,14 @@
             {{ row.negocio }}
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <!-- Botones Column -->
-    <div class="row">
-      <div class="flex-container">
+
         <ng-container matColumnDef="boton">
           <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
           <td mat-cell *matCellDef="let row">
             <mat-card-actions appearance="standard" class="button-table">
-              <!-- <span class="material-icons" routerLink="/externalizacion">
-                visibility
-              </span>
-            <span
-                class="material-icons"
-                [routerLink]="['/modCatalogo', row.id]"
-                *ngIf="rol"
-              >
-            create
-              </mat-icon>
-              <span class="material-icons" *ngIf="rol">
-                clear
-              </span>
-            -->
               <a routerLink="/externalizacion">
                 <mat-icon matTooltip="Ver Externalización">
                   visibility
@@ -206,8 +192,7 @@
             </mat-card-actions>
           </td>
         </ng-container>
-      </div>
-    </div>
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
