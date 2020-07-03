@@ -106,6 +106,7 @@ import { FormModifyCatalogoserviciosComponent } from './form-modify-catalogoserv
     PortalModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatIconModule
 
   ],
   declarations: [HomeComponent, FormCatalogoserviciosComponent, NewCatalogoserviciosComponent,ExternalizacionComponent, NewActividadexternalizacionComponent, FormActividadexternalizacionComponent, ModifyCatalogoserviciosComponent, FormModifyCatalogoserviciosComponent]
