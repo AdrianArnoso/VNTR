@@ -171,6 +171,7 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
           <td mat-cell *matCellDef="let row">
             <mat-card-actions appearance="standard" class="button-table">
+<<<<<<< HEAD
               <a routerLink="/externalizacion">
                 <mat-icon matTooltip="Ver Externalización">
                   visibility
@@ -189,6 +190,11 @@
               <!-- <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button> -->
               <!-- <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button> -->
               <!-- <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button> -->
+=======
+              <button mat-flat-button [routerLink]="['/externalizacion', row.id]" color="primary" >VER EXTERNALIZACION</button>
+              <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button>
+              <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button>
+>>>>>>> f2aca699a180b2d10d99318a759d757c4003e4b4
             </mat-card-actions>
           </td>
         </ng-container>
