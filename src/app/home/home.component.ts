@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   rol: boolean;
   responsables;
+  negocios;
   fileName= 'CatalogoServicios.xlsx';  
   length = 100;
   pageSize = 5;
@@ -44,6 +45,7 @@ export class HomeComponent implements OnInit {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
     this.serviciosList$ = apiService.getServicios$();
+    this.negocios = tareasService.getNegocios();
   }
 
   ngOnInit() {

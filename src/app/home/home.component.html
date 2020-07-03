@@ -28,9 +28,17 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+
       <mat-form-field>
         <mat-label>Negocio</mat-label>
-        <input matInput placeholder="Negocio" />
+        <mat-select>
+          <mat-option
+            *ngFor="let negocio of negocios"
+            [value]="negocio.id"
+          >
+            {{ negocio.name }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
         <a class="a-search" >
