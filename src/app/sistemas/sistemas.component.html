@@ -1,7 +1,7 @@
 
 
 <br/>
-<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
+<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchSistemas()">
   <mat-form-field >
       <mat-label>Id</mat-label>
         <input matInput formControlName="id_sistema" placeholder="Id"/>
@@ -22,8 +22,8 @@
     </mat-select>
 </mat-form-field>
 <mat-card-actions appearance="standard" class="mat-flat-button">
-  <button mat-flat-button color="primary"type="button" (click)="onReset()">LIMPIAR</button>
-  <button mat-flat-button color="primary" >BUSCAR</button>
+  <button mat-flat-button color="primary" type="button" (click)="onReset()">LIMPIAR</button>
+  <button mat-flat-button color="primary" type="button" (click)="SearchSistemas()">BUSCAR</button>
 </mat-card-actions>
 </form>
 <br/>

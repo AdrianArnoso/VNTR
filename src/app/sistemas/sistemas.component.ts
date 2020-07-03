@@ -36,7 +36,7 @@ export class SistemasComponent implements OnInit {
     criticidad_sistema: [null, [Validators.required]]
     });
 
-    SearchExternalizacion(){
+    SearchSistemas(){
       console.log(this.actSistemasSearch.value);
       return this.apiService.getSistemasSearch$(this.actSistemasSearch.value).subscribe;
     }
