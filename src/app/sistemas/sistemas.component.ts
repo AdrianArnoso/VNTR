@@ -44,6 +44,7 @@ export class SistemasComponent implements OnInit {
       this.actSistemasSearch.reset();
       // <console.log("www")>
     }
+    
 
   /*[
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},

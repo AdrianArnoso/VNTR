@@ -27,6 +27,11 @@ export class ApiService {
       .get<any>(this.path + '/' + id)
       .pipe(map(data => (data ? data : {})));
   }
+  getServicioSearch$(datos){
+    const url = this.path +"/sistemas/"+datos.id;
+    return this.http.get(url);
+
+  }
 
   postActividadExternalizacion$(datos: IActividadExternalizacion): Observable<IActividadExternalizacion>{
     console.log(datos);
@@ -44,7 +49,7 @@ export class ApiService {
   }
   getSistemasSearch$(datos){
     console.log(datos.id_sistema);
-    const url = this.path +"/sismemas/"+datos.id_sistema;
+    const url = this.path +"/sistemas/"+datos.id_sistema;
     console.log(url);
     return this.http.get<any>(url);
   }
