@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <br/>
@@ -25,78 +26,145 @@
   <button mat-flat-button color="primary" type="button" (click)="onReset()">LIMPIAR</button>
   <button mat-flat-button color="primary" type="button" (click)="SearchSistemas()">BUSCAR</button>
 </mat-card-actions>
+=======
+<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
+  <div class="row">
+    <div class="flex-container">
+      <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id_sistema" placeholder="Id" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Sistema de información</mat-label>
+        <input
+          matInput
+          formControlName="name_sistema"
+          placeholder="Sistema de información"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Criticidad</mat-label>
+        <mat-select formControlName="criticidad_sistema">
+          <!-- <mat-option value="Todo"></mat-option> -->
+          <mat-option value="Si">Si</mat-option>
+          <mat-option value="No">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-card-actions appearance="standard" class="button-search">
+        <a class="a-search" >
+          <mat-icon matTooltip="Buscar">
+            search
+          </mat-icon>
+        </a>
+        <a class="a-search">
+          <mat-icon matTooltip="Limpiar Filtros" (click)="onReset()">
+            delete
+          </mat-icon>
+        </a>
+        <!-- <button mat-flat-button color="primary">LIMPIAR</button>
+        <button mat-flat-button color="primary">BUSCAR</button> -->
+      </mat-card-actions>
+
+      <!-- <mat-card-actions appearance="standard" class="mat-flat-button">
+        <button
+          mat-flat-button
+          color="primary"
+          type="button"
+          (click)="onReset()"
+        >
+          LIMPIAR
+        </button>
+        <button mat-flat-button color="primary">BUSCAR</button>
+      </mat-card-actions> -->
+    </div>
+  </div>
+>>>>>>> 0c23003a4837803c39d2b163942f0c21ab8c6832
 </form>
-<br/>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
-
-
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
-
   <!-- Columna Id -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-    <td mat-cell *matCellDef="let sistema"> {{sistema.id}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+    <td mat-cell *matCellDef="let sistema">{{ sistema.id }}</td>
   </ng-container>
-
 
   <!-- Columna Sistema de informacion -->
   <ng-container matColumnDef="sistemaInformacion">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Sistema de informacion </th>
-    <td mat-cell *matCellDef="let sistema"> {{sistema.sistemaInformacion}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Sistema de informacion
+    </th>
+    <td mat-cell *matCellDef="let sistema">{{ sistema.sistemaInformacion }}</td>
   </ng-container>
-
 
   <!-- Columna criticidad -->
   <ng-container matColumnDef="criticidad">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Criticidad </th>
-    <td mat-cell *matCellDef="let sistema"> {{sistema.criticidad}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Criticidad</th>
+    <td mat-cell *matCellDef="let sistema">{{ sistema.criticidad }}</td>
   </ng-container>
 
-
-  <ng-container matColumnDef="borrar" >
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let a">
-        <button mat-flat-button color='primary'  focusable="false" *ngIf = "rol">
-          ELIMINAR
-        </button>
-        <button mat-flat-button routerLink="newSistema"  color='primary'  focusable="false" *ngIf = "rol" >
-          MODIFICAR
-        </button>
-        <button mat-flat-button focusable="false"  [routerLink]="['/sistemas/verSistema',a.id]">
-
-          VER SISTEMA
-        </button>
-      </td>
-    </ng-container>
-
+  <ng-container matColumnDef="borrar">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let a">
+      <mat-card-actions class="button-table">
+        <a [routerLink]="['/sistemas/verSistema', a.id]">
+          <mat-icon matTooltip="Ver Sistema">
+            visibility
+          </mat-icon>
+        </a>
+        <a routerLink="newSistema" *ngIf="rol">
+          <mat-icon matTooltip="Editar Sistema">
+            create
+          </mat-icon>
+        </a>
+        <a [routerLink]="" *ngIf="rol">
+          <mat-icon class="red-icon" matTooltip="Eliminar Sistema">
+            clear
+          </mat-icon>
+        </a>
+        <!-- <button mat-flat-button routerLink="" color="primary" >VER EXTERNALIZACION</button> -->
+        <!-- <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button> -->
+        <!-- <button mat-flat-button [routerLink]="[]" color="primary" *ngIf = "rol">MODIFICAR</button> -->
+      </mat-card-actions>
+      <!-- <button mat-flat-button color="primary" focusable="false" *ngIf="rol">
+        ELIMINAR
+      </button>
+      <button
+        mat-flat-button
+        routerLink="newSistema"
+        color="primary"
+        focusable="false"
+        *ngIf="rol"
+      >
+        MODIFICAR
+      </button>
+      <button
+        mat-flat-button
+        focusable="false"
+        [routerLink]="['/sistemas/verSistema', a.id]"
+      >
+        VER SISTEMA
+      </button> -->
+    </td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
-
-
+  <tr mat-row *matRowDef="let row; columns: columnas"></tr>
 </table>
-<mat-paginator [length]="length"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="pageEvent = $event">
+<mat-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = $event"
+>
 </mat-paginator>
 
-<br/>
+<br />
 <mat-card-actions appearance="standard" class="div-button">
-  <button mat-flat-button routerLink="newSistema" color='primary' *ngIf="rol">AÑADIR SISTEMA</button>
+  <button mat-flat-button routerLink="newSistema" color="primary" *ngIf="rol">
+    AÑADIR SISTEMA
+  </button>
 </mat-card-actions>
-
-
-
-
-
-
-
-
-
-
-
-

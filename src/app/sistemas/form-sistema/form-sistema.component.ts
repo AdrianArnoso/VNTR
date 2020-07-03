@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Location } from '@angular/common'
+
 
 
 @Component({
@@ -19,9 +21,14 @@ export class FormSistemaComponent  {
 
     @Input() sistema;
     @Input() familias;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private location: Location) { }
 
   ngOnInit() {
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }
