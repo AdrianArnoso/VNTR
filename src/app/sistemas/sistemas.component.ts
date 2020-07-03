@@ -58,14 +58,12 @@ export class SistemasComponent implements OnInit {
   constructor(private apiService: ApiService,tareasService: TareasService,private fb: FormBuilder,) { 
     this.rol = tareasService.getRol();
   }
+
+  
   
   
   ngOnInit() {
    
-  }
-
-  onClick(id){
-    this.apiService.setSistemaId(id);
   }
 
 }
