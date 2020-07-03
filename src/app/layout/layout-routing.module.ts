@@ -8,7 +8,7 @@ import { VerSistemaComponent } from '../sistemas/ver-sistema/ver-sistema.compone
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sistemas/newSistema', component: NewSistemaComponent },
-  { path: 'sistemas/verSistema', component: VerSistemaComponent },
+  { path: 'sistemas/verSistema/:id', component: VerSistemaComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

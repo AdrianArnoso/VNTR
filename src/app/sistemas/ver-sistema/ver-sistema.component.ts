@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { TareasService } from '../../tareas.service';
 import { ApiService } from 'src/app/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'abanca-ver-sistema',
@@ -12,11 +13,12 @@ export class VerSistemaComponent implements OnInit {
   //{id:"Ejemplo ID",sistemaInformacion:"Ejemplo Sistema Información",criticidad:"Ejemplo criticidad"}
   familias: Object;
 
-  constructor(private tareasService: TareasService,private apiService: ApiService) { 
+
+  constructor(private tareasService: TareasService,private apiService: ApiService,route:ActivatedRoute) { 
+    let id = route.snapshot.params.id;
     this.familias = tareasService.getFamilias();
-    this.apiService.getSistemaById$().then(datos =>{
-      this.sistema = datos[0];
-      console.log(datos[0].sistemaInformacion);
+    this.apiService.getSistemaById$(id).then(datos =>{
+      this.sistema = datos;
     });
     //this.rol = tareasService.getRol();
   }
