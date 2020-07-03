@@ -4,6 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { TareasService } from 'src/app/tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
 import * as XLSX from 'xlsx';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { Observable } from 'rxjs';
   //  export interface Extarnilacion {
   //   Se: String;
   //   Id_Actividad: string;
@@ -34,9 +37,14 @@ export class ExternalizacionComponent implements OnInit {
   displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra','Buttons'];
   rol: boolean;
   fileName= 'Externalizaciones.xlsx';  
+  serviceById$: Observable<any[]>;
   // dataSource = ELEMENT_DATA02;
-  constructor(tareasService: TareasService) { 
+  constructor(tareasService: TareasService, activatedRoute: ActivatedRoute, api:ApiService) { 
     this.rol = tareasService.getRol();
+
+    const serviceId = activatedRoute.snapshot.params.id;
+    console.log("value: " + serviceId);
+    this.serviceById$ = api.getServicioById$(serviceId);
   }
   length = 100;
   pageSize = 5;

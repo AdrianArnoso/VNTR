@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'catalogo', component: NewCatalogoserviciosComponent },
   { path: 'modCatalogo/:id', component: ModifyCatalogoserviciosComponent },
-  { path: 'externalizacion', component: ExternalizacionComponent },
+  { path: 'externalizacion/:id', component: ExternalizacionComponent },
   { path: 'newActividadExternalizacion', component: NewActividadexternalizacionComponent },
 ];
 

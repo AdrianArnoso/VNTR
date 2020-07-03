@@ -104,3 +104,15 @@
   </div> -->
 </div>
 
+<div *ngIf="serviceById$ | async as servicios">
+  <mat-nav-list>
+    <a *ngFor="let servicio of servicios" mat-list-item >
+      {{ servicio.id }}
+      {{ servicio.name }}
+      {{servicio.descripcion}}
+      {{servicio.criticidad}}
+      {{servicio.responsable}}
+      {{servicio.negocio}}
+    </a>
+  </mat-nav-list>
+</div>
