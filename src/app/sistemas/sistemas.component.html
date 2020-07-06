@@ -75,7 +75,7 @@
             visibility
           </mat-icon>
         </a>
-        <a [routerLink]="['/sistemas/modSistema', a.id]" *ngIf="rol">
+        <a routerLink="newSistema" *ngIf="rol">
           <mat-icon matTooltip="Editar Sistema">
             create
           </mat-icon>
@@ -121,7 +121,7 @@
 
 <mat-card-actions appearance="standard" class="div-button">
   <button mat-flat-button color="primary" (click)="exportexcel()">
-    EXPORTAR EXCE
+    EXPORTAR EXCEL
   </button>
   <button mat-flat-button routerLink="newSistema" color="primary" *ngIf="rol">
     AÑADIR SISTEMA
