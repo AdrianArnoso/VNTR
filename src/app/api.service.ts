@@ -49,7 +49,7 @@ export class ApiService {
   }
   getSistemasSearch$(datos){
     console.log(datos.id_sistema);
-    const url = this.path +"/sistemas/"+datos.id_sistema;
+    const url = this.path +"/sistemas/"+datos.id_sistema+"/"+datos.name_sistema+"/"+datos.criticidad_sistema;
     console.log(url);
     return this.http.get<any>(url);
   }

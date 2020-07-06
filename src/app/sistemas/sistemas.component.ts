@@ -38,7 +38,7 @@ export class SistemasComponent implements OnInit {
 
     SearchSistemas(){
       console.log(this.actSistemasSearch.value);
-      return this.apiService.getSistemasSearch$(this.actSistemasSearch.value).subscribe;
+      return this.apiService.getSistemasSearch$(this.actSistemasSearch.value).subscribe();
     }
     onReset(){
       this.actSistemasSearch.reset();
