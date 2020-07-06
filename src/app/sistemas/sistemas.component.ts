@@ -5,6 +5,7 @@ import { TareasService } from '../tareas.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { ApiService } from '../api.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'abanca-sistemas',
@@ -13,7 +14,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class SistemasComponent implements OnInit {
   columnas: string[] = ['id','sistemaInformacion','criticidad','borrar'];
-
+  fileName= 'Sistemas.xlsx';
   length = 100;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
@@ -63,6 +64,15 @@ export class SistemasComponent implements OnInit {
   
   
   ngOnInit() {
+   
+  }
+  exportexcel(): void {
+       
+    let element = document.getElementById('excel-table'); 
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, this.fileName);
    
   }
 

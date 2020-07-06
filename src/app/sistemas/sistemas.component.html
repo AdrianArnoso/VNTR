@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 
 
 <form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchSistemas()">
-=======
-<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
->>>>>>> afed6ce8e9fc6d5b8f4875a5e03aea2ced728020
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
@@ -46,7 +42,7 @@
   </div>
 </form>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" id="excel-table">
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
@@ -124,7 +120,7 @@
 </mat-paginator>
 
 <mat-card-actions appearance="standard" class="div-button">
-  <button mat-flat-button color="primary">
+  <button mat-flat-button color="primary" (click)="exportexcel()">
     EXPORTAR EXCEL
   </button>
   <button mat-flat-button routerLink="newSistema" color="primary" *ngIf="rol">
