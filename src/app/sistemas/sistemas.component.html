@@ -1,33 +1,5 @@
-<<<<<<< HEAD
 
-
-<br/>
 <form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchSistemas()">
-  <mat-form-field >
-      <mat-label>Id</mat-label>
-        <input matInput formControlName="id_sistema" placeholder="Id"/>
-
-  </mat-form-field>
-  <mat-form-field>
-      <mat-label>Sistema de información</mat-label>
-        <input matInput formControlName="name_sistema" placeholder="Sistema de información"/>
-
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Criticidad</mat-label>
-    <mat-select formControlName="criticidad_sistema">
-      <mat-option value="Todo"></mat-option>
-      <mat-option value="Si">Si</mat-option>
-      <mat-option value="No">No</mat-option>
-    </mat-select>
-</mat-form-field>
-<mat-card-actions appearance="standard" class="mat-flat-button">
-  <button mat-flat-button color="primary" type="button" (click)="onReset()">LIMPIAR</button>
-  <button mat-flat-button color="primary" type="button" (click)="SearchSistemas()">BUSCAR</button>
-</mat-card-actions>
-=======
-<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
@@ -53,7 +25,7 @@
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
         <a class="a-search" >
-          <mat-icon matTooltip="Buscar">
+          <mat-icon matTooltip="Buscar" (click)="SearchSistemas()">
             search
           </mat-icon>
         </a>
@@ -79,7 +51,7 @@
       </mat-card-actions> -->
     </div>
   </div>
->>>>>>> 0c23003a4837803c39d2b163942f0c21ab8c6832
+
 </form>
 
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
