@@ -75,7 +75,7 @@
             visibility
           </mat-icon>
         </a>
-        <a routerLink="newSistema" *ngIf="rol">
+        <a [routerLink]="['/sistemas/modSistema', a.id]" *ngIf="rol">
           <mat-icon matTooltip="Editar Sistema">
             create
           </mat-icon>
