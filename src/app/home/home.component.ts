@@ -50,11 +50,11 @@ export class HomeComponent implements OnInit {
   }
 
   actServiciosSearch = this.fb.group({
-    id_servicio: [null, [Validators.required]],
-    name_servicio: [null, [Validators.required]],
-    criticidad_servicio: [null, [Validators.required]],
-    responsable: [null, [Validators.required]],
-    negocio: [null, [Validators.required]],
+    id: [null],
+    name_servicio: [null],
+    criticidad_servicio: [null],
+    responsable: [null],
+    negocio: [null],
     });
 
   ngOnInit() {

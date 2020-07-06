@@ -31,9 +31,9 @@ export class SistemasComponent implements OnInit {
   );
 
   actSistemasSearch = this.fb.group({
-    id_sistema: [null, [Validators.required]],
-    name_sistema: [null, [Validators.required]],
-    criticidad_sistema: [null, [Validators.required]]
+    id_sistema: [null],
+    name_sistema: [null ],
+    criticidad_sistema: [null]
     });
 
     SearchSistemas(){
