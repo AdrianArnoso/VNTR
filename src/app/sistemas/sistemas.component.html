@@ -83,9 +83,6 @@
             clear
           </mat-icon>
         </a>
-        <!-- <button mat-flat-button routerLink="" color="primary" >VER EXTERNALIZACION</button> -->
-        <!-- <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button> -->
-        <!-- <button mat-flat-button [routerLink]="[]" color="primary" *ngIf = "rol">MODIFICAR</button> -->
       </mat-card-actions>
       <!-- <button mat-flat-button color="primary" focusable="false" *ngIf="rol">
         ELIMINAR
@@ -120,8 +117,10 @@
 >
 </mat-paginator>
 
-<br />
 <mat-card-actions appearance="standard" class="div-button">
+  <button mat-flat-button color="primary">
+    EXPORTAR EXCEL
+  </button>
   <button mat-flat-button routerLink="newSistema" color="primary" *ngIf="rol">
     AÑADIR SISTEMA
   </button>
