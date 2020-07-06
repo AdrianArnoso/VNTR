@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sistemas/newSistema', component: NewSistemaComponent },
   { path: 'sistemas/verSistema/:id', component: VerSistemaComponent },
-  { path: 'sistemas/modSistema/:id', component: ModifySistemasComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

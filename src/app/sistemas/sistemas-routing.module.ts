@@ -6,7 +6,6 @@ import { ModifySistemasComponent } from './modify-sistemas/modify-sistemas.compo
 
 const routes: Routes = [
   { path: 'newSistema', component: NewSistemaComponent },
-  { path: 'modSistema/:id', component: ModifySistemasComponent },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes )],

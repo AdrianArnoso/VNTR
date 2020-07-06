@@ -9,8 +9,7 @@ import { FormSistemaComponent } from './form-sistema/form-sistema.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { VerSistemaComponent } from './ver-sistema/ver-sistema.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { ModifySistemasComponent } from './modify-sistemas/modify-sistemas.component';
-import { FormModifySistemasComponent } from './form-modify-sistemas/form-modify-sistemas.component';
+
 
 @NgModule({
   imports: [
@@ -35,7 +34,7 @@ import { FormModifySistemasComponent } from './form-modify-sistemas/form-modify-
     MatIconModule,
     MatTooltipModule
   ],
-  declarations: [SistemasComponent, NewSistemaComponent, FormSistemaComponent,VerSistemaComponent, ModifySistemasComponent, FormModifySistemasComponent],
+  declarations: [SistemasComponent, NewSistemaComponent, FormSistemaComponent,VerSistemaComponent],
   exports: [SistemasComponent, NewSistemaComponent, FormSistemaComponent,VerSistemaComponent]
 })
 export class SistemasModule { }
