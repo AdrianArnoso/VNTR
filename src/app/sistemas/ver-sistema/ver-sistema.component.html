@@ -1,9 +1,9 @@
-    <div class="all-width">
+    <!-- <div class="all-width">
       <label class="flex-div-info">{{ sistema.id }}</label>
 
       <label  class="flex-div-info">{{ sistema.sistemaInformacion }}</label>
       <label  class="flex-div-info">{{ sistema.criticidad }}</label>
-    </div>
+    </div> -->
 
 <!--table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
@@ -17,20 +17,37 @@
 
 
 </table-->
-<div class="row">
-  <div class="flex-container">
-    <label class="label-familia">Familias:</label>
-    <section class="check-section">
-      <mat-checkbox
-        color="primary"
-        class="check-margin"
-        [disabled] = true
-        *ngFor="let familia of familias"
-        [checked] = familia.checked
-        [value]="familia.id"
-      >
-        {{ familia.name }}
-      </mat-checkbox>
-    </section>
-  </div>
-</div>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ sistema.id }} - {{ sistema.sistemaInformacion}}</mat-card-title>
+    <mat-card-subtitle>Criticidad : {{ sistema.criticidad }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="flex-container">
+        <label class="label-familia">Familias:</label>
+        <section class="check-section">
+          <mat-checkbox
+            color="primary"
+            class="check-margin"
+            [disabled] = true
+            *ngFor="let familia of familias"
+            [checked] = familia.checked
+            [value]="familia.id"
+          >
+            {{ familia.name }}
+          </mat-checkbox>
+        </section>
+      </div>
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-actions appearance="standard" class="div-button">
+    <button  mat-flat-button (click)="goBack()" color="primary" >ATRÁS</button>
+  </mat-card-actions>
+
+</mat-card>
+
+

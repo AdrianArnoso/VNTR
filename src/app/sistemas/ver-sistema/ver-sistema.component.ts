@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { TareasService } from '../../tareas.service';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'abanca-ver-sistema',
@@ -14,7 +16,8 @@ export class VerSistemaComponent implements OnInit {
   familias: Object;
 
 
-  constructor(private tareasService: TareasService,private apiService: ApiService,route:ActivatedRoute) { 
+  constructor(private tareasService: TareasService,private apiService: ApiService,route:ActivatedRoute,     private location: Location
+    ) {
     let id = route.snapshot.params.id;
     this.familias = tareasService.getFamilias();
     this.apiService.getSistemaById$(id).then(datos =>{
@@ -22,11 +25,15 @@ export class VerSistemaComponent implements OnInit {
     });
     //this.rol = tareasService.getRol();
   }
-  
-  
+
+
   ngOnInit() {
-   
+
   // this.dataSource.sort = this.sort;
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }
@@ -36,7 +43,7 @@ export class Sistema {
 
 
   }
-  
+
 
 }
 */
