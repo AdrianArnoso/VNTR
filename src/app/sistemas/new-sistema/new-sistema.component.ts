@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TareasService } from 'src/app/tareas.service';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
@@ -11,13 +11,20 @@ import { ApiService } from 'src/app/api.service';
 export class NewSistemaComponent implements OnInit {
   familias = this.tareasService.getFamilias();
   sistema;
+  @Input() modificar;
 
   constructor(private tareasService: TareasService, route: ActivatedRoute,apiService: ApiService) { 
-    let id = route.snapshot.params.id;
+    
     this.familias = tareasService.getFamilias();
-    apiService.getSistemaById$(id).then(datos =>{
+    console.log(this.modificar);
+    if(this.modificar){
+      let id = route.snapshot.params.id;
+      apiService.getSistemaById$(id).then(datos =>{
       this.sistema = datos;
-    });
+      });
+    }
+    
+    
   }
 
   ngOnInit() {
