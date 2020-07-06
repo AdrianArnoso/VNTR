@@ -3,7 +3,7 @@
     <div class="flex-container">
       <mat-form-field>
         <mat-label>Id</mat-label>
-        <input matInput  formControlName="id_servicio" placeholder="Id" />
+        <input matInput  formControlName="id" placeholder="Id" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Servicio Tecnológico</mat-label>
@@ -31,8 +31,8 @@
 
       <mat-form-field>
         <mat-label>Negocio</mat-label>
-        <mat-select>
-          <mat-option
+        <mat-select  formControlName="negocio">
+          <mat-option 
             *ngFor="let negocio of negocios"
             [value]="negocio.id"
           >
