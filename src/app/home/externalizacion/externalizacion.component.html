@@ -37,11 +37,6 @@
     <td mat-cell *matCellDef="let element" >  <input id="checkFollower" type="checkbox" ng-checked="leader" aria-label="Follower input"></td>
   </ng-container> -->
 
-  <ng-container matColumnDef="Se">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Se </th>
-    <td mat-cell *matCellDef="let element" ></td>
-  </ng-container>
-
   <!-- Name Column -->
   <ng-container matColumnDef="Id_Actividad">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
@@ -121,7 +116,7 @@
 
 
 <div class="atras" >
-  <button  mat-flat-button (click)="goBack()" color="primary" >Atras</button>
+  <button  mat-flat-button (click)="goBack()" color="primary" >ATRÁS</button>
   <!-- <div class="buttonsTableCrudModificarEliminar">
     <button  mat-flat-button color="primary" >Modificar seleccionado</button>
     <button  mat-flat-button color="primary" >Eliminar seleccionado</button>
