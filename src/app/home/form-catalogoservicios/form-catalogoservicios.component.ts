@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common'
+
 
 @Component({
   selector: 'abanca-form-catalogoservicios',
@@ -20,9 +22,15 @@ export class FormCatalogoserviciosComponent {
   @Input() negocios;
   @Input() responsables;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private location: Location
+    ) { }
 
   ngOnInit() {
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

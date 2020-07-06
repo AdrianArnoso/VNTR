@@ -7,6 +7,9 @@ import * as XLSX from 'xlsx';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common'
+
+
   //  export interface Extarnilacion {
   //   Se: String;
   //   Id_Actividad: string;
@@ -24,7 +27,7 @@ import { Observable } from 'rxjs';
   // const ELEMENT_DATA02: Extarnilacion[] = [
   //   {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
   //   {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'}
-    
+
   // ];
 
 @Component({
@@ -36,10 +39,11 @@ export class ExternalizacionComponent implements OnInit {
 
   displayedColumns: string[] = ['Se', 'Id_Actividad', 'Descripcion', 'Externalizacion','Criticidad','Altia','Indra','Buttons'];
   rol: boolean;
-  fileName= 'Externalizaciones.xlsx';  
+  fileName= 'Externalizaciones.xlsx';
   serviceById$: Observable<any[]>;
   // dataSource = ELEMENT_DATA02;
-  constructor(tareasService: TareasService, activatedRoute: ActivatedRoute, api:ApiService) { 
+  constructor(tareasService: TareasService, activatedRoute: ActivatedRoute, api:ApiService, private location: Location
+    ) {
     this.rol = tareasService.getRol();
 
     const serviceId = activatedRoute.snapshot.params.id;
@@ -49,8 +53,8 @@ export class ExternalizacionComponent implements OnInit {
   length = 100;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
-  
-  
+
+
    @ViewChild(MatSort) sort: MatSort;
    @ViewChild(MatPaginator) paginator: MatPaginator;
     // @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -88,10 +92,10 @@ export class ExternalizacionComponent implements OnInit {
     {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
     {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
     {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'},
-    
-    
+
+
    ];
-   
+
 
 
   dataSource = new MatTableDataSource<Externalizacion>(this.datos);
@@ -101,22 +105,26 @@ export class ExternalizacionComponent implements OnInit {
 
   }
   exportexcel(): void {
-       
-    let element = document.getElementById('excel-table'); 
+
+    let element = document.getElementById('excel-table');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
 
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
     XLSX.writeFile(wb, this.fileName);
-   
+
+  }
+
+  goBack(){
+    this.location.back();
   }
 }
 
   export class Externalizacion {
     constructor(public Se: string, public Id_Actividad: string, public Descripcion: string, public Externalizacion: string, public Criticidad: string, public Altia: string, public Indra: string){
-  
-  
+
+
     }
 
 }

@@ -121,25 +121,10 @@
 
     <mat-card-actions appearance="standard" class="div-button">
       <button mat-flat-button color="primary" [disabled]="catalogoForm.invalid">GUARDAR</button>
-      <button mat-flat-button color="primary" routerLink="/home">CANCELAR</button>
+      <button mat-flat-button color="primary" (click)="goBack()">CANCELAR</button>
   </mat-card-actions>
 
   </mat-card>
 
-    <div>
-      Recojo del server: 
-      
-    </div>
-
-    <mat-nav-list>
-      <a *ngFor="let servicio of servicios" mat-list-item >
-        {{ servicio.id }}
-        {{ servicio.name }}
-        {{servicio.descripcion}}
-        {{servicio.criticidad}}
-        {{servicio.responsable}}
-        {{servicio.negocio}}
-      </a>
-    </mat-nav-list>
 </form>
 
