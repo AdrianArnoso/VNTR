@@ -15,7 +15,7 @@
 </div>
 </mat-card> -->
 
-<mat-card *ngIf="serviceById$ | async as servicios">
+<div *ngIf="serviceById$ | async as servicios">
   <mat-card *ngFor="let servicio of servicios" class="">
     <mat-card-header>
       <mat-card-title>{{ servicio.id }} - {{ servicio.name}}</mat-card-title>
@@ -26,7 +26,7 @@
      {{servicio.descripcion}}
     </mat-card-content>
   </mat-card>
-</mat-card>
+</div>
 
 
 <!-- Tabla -->
