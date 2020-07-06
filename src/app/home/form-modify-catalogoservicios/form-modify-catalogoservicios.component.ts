@@ -1,10 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
+import { Location } from '@angular/common'
+
 
 @Component({
   selector: 'abanca-form-modify-catalogoservicios',
   templateUrl: './form-modify-catalogoservicios.component.html',
   styleUrls: ['./form-modify-catalogoservicios.component.scss']
+
 })
 export class FormModifyCatalogoserviciosComponent implements OnInit {
   catalogoForm = this.fb.group({
@@ -27,7 +30,9 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private location: Location
+    ) { }
 
   ngOnInit() {
     console.log(this.servicios);
@@ -35,6 +40,11 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
     this.selectedResp = this.servicios[0].responsable;
     this.selectedNeg = this.servicios[0].negocio;
     console.log("Selected " + this.selectedNeg );
+  }
+
+
+  goBack(){
+    this.location.back();
   }
 
 

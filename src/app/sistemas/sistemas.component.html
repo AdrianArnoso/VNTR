@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 <form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchSistemas()">
+=======
+<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
+>>>>>>> 2de4d6c87d1c434cc958c65535211c9bd0e7b2af
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
@@ -34,24 +38,15 @@
             delete
           </mat-icon>
         </a>
-        <!-- <button mat-flat-button color="primary">LIMPIAR</button>
+        <!-- <button mat-flat-button color="primary" (click)="onReset()">LIMPIAR</button>
         <button mat-flat-button color="primary">BUSCAR</button> -->
       </mat-card-actions>
-
-      <!-- <mat-card-actions appearance="standard" class="mat-flat-button">
-        <button
-          mat-flat-button
-          color="primary"
-          type="button"
-          (click)="onReset()"
-        >
-          LIMPIAR
-        </button>
-        <button mat-flat-button color="primary">BUSCAR</button>
-      </mat-card-actions> -->
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2de4d6c87d1c434cc958c65535211c9bd0e7b2af
 </form>
 
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
@@ -97,9 +92,6 @@
             clear
           </mat-icon>
         </a>
-        <!-- <button mat-flat-button routerLink="" color="primary" >VER EXTERNALIZACION</button> -->
-        <!-- <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button> -->
-        <!-- <button mat-flat-button [routerLink]="[]" color="primary" *ngIf = "rol">MODIFICAR</button> -->
       </mat-card-actions>
       <!-- <button mat-flat-button color="primary" focusable="false" *ngIf="rol">
         ELIMINAR
@@ -134,8 +126,10 @@
 >
 </mat-paginator>
 
-<br />
 <mat-card-actions appearance="standard" class="div-button">
+  <button mat-flat-button color="primary">
+    EXPORTAR EXCEL
+  </button>
   <button mat-flat-button routerLink="newSistema" color="primary" *ngIf="rol">
     AÑADIR SISTEMA
   </button>
