@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+
+<form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchSistemas()">
+=======
 <form [formGroup]="actSistemasSearch" novalidate (ngSubmit)="SearchServicios()">
+>>>>>>> 2de4d6c87d1c434cc958c65535211c9bd0e7b2af
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
@@ -24,7 +29,7 @@
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
         <a class="a-search" >
-          <mat-icon matTooltip="Buscar">
+          <mat-icon matTooltip="Buscar" (click)="SearchSistemas()">
             search
           </mat-icon>
         </a>
@@ -38,6 +43,10 @@
       </mat-card-actions>
     </div>
   </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2de4d6c87d1c434cc958c65535211c9bd0e7b2af
 </form>
 
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
