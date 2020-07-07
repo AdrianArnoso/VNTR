@@ -1,40 +1,33 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row class="app_header">
+<mat-toolbar color="primary" class="app_header">
+  <span routerLink="home">VNTR - Inventario Sistemas</span>
+  <span class="toolbar-space"></span>
 
-    <span routerLink="home">VNTR - Inventario Sistemas</span>
-    <span class="toolbar-space"></span>
+  <button mat-button [matMenuTriggerFor]="menuIdioma">Idioma</button>
+  <mat-menu #menuIdioma="matMenu" xPosition="after">
+    <button mat-menu-item>ES</button>
+    <button mat-menu-item>EN</button>
+    <button mat-menu-item>PT</button>
+  </mat-menu>
 
-    <!-- Aqui mostraría el user activo
-    <div class="nav-user">
-      <abanca-user-info></abanca-user-info>
-    </div> -->
-    <div class="languageLogin">
-      <mat-form-field appearance="hint">
-        <mat-label>Idioma</mat-label>
-        <mat-select>
-          <mat-option value="ES" routerLink="/externalizacion">ES</mat-option>
-          <mat-option value="EN">EN</mat-option>
-          <mat-option value="PT">PT</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <div class="nav-user">
-        <span class="material-icons toolbar-icons">account_circle</span>
-        <mat-select>
-          <mat-option routerLink="/login">Login</mat-option>
-        </mat-select>
-      </div>
-    </div>
-  </mat-toolbar-row>
+  <!-- <mat-icon [matMenuTriggerFor]="menuLogin" class="toolbar-icon">account_circle</mat-icon> -->
+  <button mat-icon-button class="toolbar-icon" aria-label="Login button">
+    <mat-icon [matMenuTriggerFor]="menuLogin" >account_circle</mat-icon>
+  </button>
+  <mat-menu #menuLogin="matMenu" xPosition="before">
+    <button mat-menu-item routerLink="/login">Login</button>
+  </mat-menu>
 </mat-toolbar>
 
 <nav mat-tab-nav-bar>
-  <a mat-tab-link
+  <a
+    mat-tab-link
     *ngFor="let link of navLinks"
     [routerLink]="link.link"
-    routerLinkActive #rla="routerLinkActive"
-    [active]="rla.isActive">
-    {{link.label}}
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
   </a>
 </nav>
 <router-outlet></router-outlet>
@@ -43,6 +36,3 @@
   <mat-tab label="Sistemas de Informacion" routerLink="sistemas"> <abanca-sistemas></abanca-sistemas> </mat-tab>
 </mat-tab-group>
 <router-outlet></router-outlet> -->
-
-
-
