@@ -6,6 +6,8 @@ table {
 }
 th, td{
   width: 13%;
+  font-size: 14px;
+
 }
 
 .flex-container {
@@ -17,6 +19,7 @@ th, td{
 .flex-container > mat-form-field {
   margin: 10px;
   margin-left: 19px;
+  font-size: 14px;
 }
 
 .row {
@@ -95,6 +98,8 @@ a {
 .mat-flat-button{
   float: right;
   margin-right: 10px;
+  font-size: 14px;
+
 }
 
 .div-button{
@@ -107,5 +112,6 @@ button{
   font-size: 14px;
   border-radius: 8px;
   margin: 3px;
+
 }
 

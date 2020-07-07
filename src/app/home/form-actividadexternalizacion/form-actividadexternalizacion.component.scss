@@ -7,6 +7,11 @@
 
 .flex-container > mat-form-field {
   margin: 10px;
+  font-size: 14px;
+}
+
+mat-card-title{
+  font-size: 20px;
 }
 
 .row {
@@ -34,14 +39,12 @@
   width: 50%;
 }
 
-.title-text{
-  font-size: 20px;
-}
-
 label{
   margin-top: 45px;
   margin-left: 45px;
   margin-right: 19px;
+  font-size: 14px;
+
 }
 
 .check-section {
@@ -71,13 +74,14 @@ label{
 
 .check-margin{
   margin: 0 19px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 
 .div-button{
   float: right;
   margin-right: 10px;
+
 }
 
 button{
@@ -85,4 +89,5 @@ button{
   font-size: 14px;
   border-radius: 8px;
   margin: 3px;
+
 }
