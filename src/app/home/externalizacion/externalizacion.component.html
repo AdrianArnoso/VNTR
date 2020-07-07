@@ -82,16 +82,16 @@
           </mat-icon>
         </a> -->
         <!-- [routerLink]="['/newActividadExternalizacion', row.id]" -->
-        <a routerLink="/newActividadExternalizacion" *ngIf="rol">
+        <button mat-icon-button routerLink="/newActividadExternalizacion" *ngIf="rol" aria-label="editar-button">
           <mat-icon matTooltip="Editar Actividad del Servicio">
             create
           </mat-icon>
-        </a>
-        <a [routerLink]="" *ngIf="rol">
+        </button>
+        <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button">
           <mat-icon class="red-icon" matTooltip="Eliminar Actividad del Servicio">
             clear
           </mat-icon>
-        </a>
+        </button >
       </mat-card-actions>
 
     </td>

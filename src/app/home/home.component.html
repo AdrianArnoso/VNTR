@@ -32,7 +32,7 @@
       <mat-form-field>
         <mat-label>Negocio</mat-label>
         <mat-select  formControlName="negocio">
-          <mat-option 
+          <mat-option
             *ngFor="let negocio of negocios"
             [value]="negocio.id"
           >
@@ -41,16 +41,16 @@
         </mat-select>
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
-        <a class="a-search" >
+        <button mat-icon-button class="a-search" aria-label="search-button">
           <mat-icon matTooltip="Buscar" (click)="SearchServicio()" >
             search
           </mat-icon>
-        </a>
-        <a class="a-search">
+        </button>
+        <button mat-icon-button class="a-search" aria-label="reset-button">
           <mat-icon matTooltip="Limpiar Filtros" type="button" (click)="onReset()">
             delete
           </mat-icon>
-        </a>
+        </button>
         <!-- <button mat-flat-button color="primary">LIMPIAR</button>
         <button mat-flat-button color="primary">BUSCAR</button> -->
       </mat-card-actions>
@@ -179,21 +179,21 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header ></th>
           <td mat-cell *matCellDef="let row">
             <mat-card-actions class="button-table">
-              <a [routerLink]="['/externalizacion', row.id]">
+              <button mat-icon-button [routerLink]="['/externalizacion', row.id]" aria-label="externalizacion-button">
                 <mat-icon matTooltip="Ver Externalización">
                   visibility
                 </mat-icon>
-              </a>
-              <a [routerLink]="['/modCatalogo', row.id]" *ngIf="rol">
+              </button >
+              <button mat-icon-button [routerLink]="['/modCatalogo', row.id]" *ngIf="rol" aria-label="editar-button">
                 <mat-icon matTooltip="Editar Servicio">
                   create
                 </mat-icon>
-              </a>
-              <a [routerLink]="" *ngIf="rol">
+              </button>
+              <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button">
                 <mat-icon class="red-icon" matTooltip="Eliminar Servicio">
                   clear
                 </mat-icon>
-              </a>
+              </button>
               <!-- <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button> -->
               <!-- <button mat-flat-button color="primary" *ngIf = "rol">ELIMINAR</button> -->
               <!-- <button mat-flat-button [routerLink]="['/modCatalogo', row.id]" color="primary" *ngIf = "rol">MODIFICAR</button> -->
