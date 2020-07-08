@@ -18,7 +18,7 @@
 
 </table-->
 
-<mat-card>
+<mat-card *ngIf="sistema$ | async as sistema">
   <mat-card-header>
     <mat-card-title>{{ sistema.id }} - {{ sistema.sistemaInformacion}}</mat-card-title>
     <mat-card-subtitle>Criticidad : {{ sistema.criticidad }}</mat-card-subtitle>

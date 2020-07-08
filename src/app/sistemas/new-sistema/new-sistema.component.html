@@ -1,3 +1,3 @@
-<abanca-form-sistema [familias] = "familias" [sistema]="sistema"></abanca-form-sistema> 
+<abanca-form-sistema [familias] = "familias" *ngIf="sistema$ | async as sistema" [sistema] = "sistema"></abanca-form-sistema> 
 
 

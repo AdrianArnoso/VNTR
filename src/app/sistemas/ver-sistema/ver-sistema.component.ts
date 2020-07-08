@@ -3,15 +3,16 @@ import { TareasService } from '../../tareas.service';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from "@angular/common";
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'abanca-ver-sistema',
   templateUrl: './ver-sistema.component.html',
   styleUrls: ['./ver-sistema.component.scss']
-})
+}) 
 export class VerSistemaComponent implements OnInit {
-  sistema;
+  sistema$: Observable<any[]>;;
   //{id:"Ejemplo ID",sistemaInformacion:"Ejemplo Sistema Información",criticidad:"Ejemplo criticidad"}
   familias: Object;
 
@@ -20,9 +21,7 @@ export class VerSistemaComponent implements OnInit {
     ) {
     let id = route.snapshot.params.id;
     this.familias = tareasService.getFamilias();
-    this.apiService.getSistemaById$(id).then(datos =>{
-      this.sistema = datos;
-    });
+    this.sistema$ = this.apiService.getSistemaById$(id);
     //this.rol = tareasService.getRol();
   }
 

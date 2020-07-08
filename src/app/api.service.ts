@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map ,catchError } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
 import { IActividadExternalizacion } from './Models/ActividadExternalizacion';
+import { isUndefined } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -62,8 +63,10 @@ export class ApiService {
   
 
   getSistemaById$(id) {
-    console.log(id);
-    return this.http.get<any[]>(this.path + "/sistemas"+"/"+id).pipe(map(data => (data ? data : []))).toPromise();
+    if(!isUndefined(id))
+      return this.http.get<any[]>(this.path + "/sistemas"+"/"+id).pipe(map(data => (data ? data : [])));
+    else
+      return new Observable<any[]>((observer) => observer.next([{id:"",sistemaInformacion:"",criticidad:""}]));
   }
 
 }
