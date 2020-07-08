@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Location } from '@angular/common'
-import { Observable } from 'rxjs';
+import { isUndefined } from 'util';
 
 
 
@@ -23,6 +23,7 @@ export class FormSistemaComponent  {
     @Input() sistema;
     @Input() familias;
     criticidad;
+    titulo;
 
   constructor(private fb: FormBuilder,
     private location: Location) { 
@@ -30,7 +31,10 @@ export class FormSistemaComponent  {
     }
 
   ngOnInit() { 
-  
+        if(isUndefined(this.sistema.id))
+          this.titulo = "Nuevo Sistema";
+        else
+          this.titulo = "Modificar Sistema";
         this.criticidad = this.sistema.criticidad;
         console.log(this.criticidad)
     
