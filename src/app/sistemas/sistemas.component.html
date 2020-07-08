@@ -81,8 +81,9 @@
           <mat-icon matTooltip="Editar Sistema">
             create
           </mat-icon>
+        
         </button>
-        <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button">
+        <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button" (click)="DeleteSistemas(a.id)">
           <mat-icon matTooltip="Eliminar Sistema">
             <!-- clear -->
             delete
