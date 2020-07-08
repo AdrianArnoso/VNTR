@@ -6,6 +6,8 @@ table {
 }
 th, td{
   width: 13%;
+  font-size: 14px;
+
 }
 
 .flex-container {
@@ -16,6 +18,8 @@ th, td{
 
 .flex-container > mat-form-field {
   margin: 10px;
+  margin-left: 19px;
+  font-size: 14px;
 }
 
 .row {
@@ -24,8 +28,8 @@ th, td{
 }
 
 .less-width {
-  width: 6%;
-  padding-left: 10px;
+  width: 10%;
+  padding-left: 5px;
   padding-right: 5px;
   // background-color: blue;
   /* IMPORTANTE */
@@ -34,8 +38,8 @@ th, td{
 }
 
 .most-width {
-  width: 22%;
-  padding-left: 15px;
+  width: 20%;
+  padding-left: 5px;
   padding-right: 3px;
   // background-color: yellow;
   /* IMPORTANTE */
@@ -44,7 +48,7 @@ th, td{
 }
 
 .medium-width {
-  width: 10%;
+  width: 11%;
   padding-left: 40px;
   padding-right: 5px;
   // background-color: pink;
@@ -54,7 +58,7 @@ th, td{
 }
 
 .button-table {
-  width: 80%;
+  width: 95%;
   margin-top: 5px;
   // background-color: orange;
   /* IMPORTANTE */
@@ -79,7 +83,7 @@ a {
 .button-search{
   float: right;
   margin-left: 20px;
-  margin-top: 25px;
+  margin-top: 13px;
 }
 
 .a-search{
@@ -94,6 +98,8 @@ a {
 .mat-flat-button{
   float: right;
   margin-right: 10px;
+  font-size: 14px;
+
 }
 
 .div-button{
@@ -106,5 +112,6 @@ button{
   font-size: 14px;
   border-radius: 8px;
   margin: 3px;
+
 }
 

@@ -45,6 +45,10 @@ export class SistemasComponent implements OnInit {
       this.actSistemasSearch.reset();
       // <console.log("www")>
     }
+    DeleteSistemas(id){
+      console.log(id);
+      return this.apiService.DeleteSistemas$(id).subscribe();
+    }
     
 
   /*[

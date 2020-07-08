@@ -4,6 +4,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from '../home/home.component';
 import { NewSistemaComponent } from '../sistemas/new-sistema/new-sistema.component';
 import { VerSistemaComponent } from '../sistemas/ver-sistema/ver-sistema.component';
+<<<<<<< HEAD
+// import { ModifySistemasComponent } from '../sistemas/modify-sistemas/modify-sistemas.component';
+=======
+>>>>>>> 794fab72d2f33c57b8cc2d6902c8f32d29199d23
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

@@ -39,6 +39,11 @@ export class ApiService {
     return this.http.get(url);
 
   }
+  DeleteServicios$(id){
+    const url = this.path+"/DeleteServicios/"+id
+    console.log(url);
+    return this.http.delete<any>(url);
+  }
 
   postActividadExternalizacion$(datos: IActividadExternalizacion): Observable<IActividadExternalizacion>{
     console.log(datos);
@@ -67,6 +72,11 @@ export class ApiService {
       return this.http.get<any[]>(this.path + "/sistemas"+"/"+id).pipe(map(data => (data ? data : [])));
     else
       return new Observable<any[]>((observer) => observer.next([{id:"",sistemaInformacion:"",criticidad:""}]));
+  }
+  DeleteSistemas$(id){
+    const url = this.path+"/DeleteSistemas/"+id
+    console.log(url);
+    return this.http.delete<any>(url);
   }
 
 }
