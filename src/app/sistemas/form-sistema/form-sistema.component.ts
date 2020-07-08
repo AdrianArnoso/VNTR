@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Location } from '@angular/common'
+import { Observable } from 'rxjs';
 
 
 
@@ -21,10 +22,18 @@ export class FormSistemaComponent  {
 
     @Input() sistema;
     @Input() familias;
-  constructor(private fb: FormBuilder,
-    private location: Location) { }
+    criticidad;
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder,
+    private location: Location) { 
+      
+    }
+
+  ngOnInit() { 
+  
+        this.criticidad = this.sistema.criticidad;
+        console.log(this.criticidad)
+    
   }
 
   goBack(){
