@@ -81,7 +81,7 @@
           </mat-icon>
         </a>
         <a [routerLink]="" *ngIf="rol">
-          <mat-icon class="red-icon" matTooltip="Eliminar Sistema">
+          <mat-icon class="red-icon" matTooltip="Eliminar Sistema" (click)="DeleteSistemas(a.id)">
             clear
           </mat-icon>
         </a>

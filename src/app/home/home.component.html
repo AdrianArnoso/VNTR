@@ -190,7 +190,7 @@
                 </mat-icon>
               </a>
               <a [routerLink]="" *ngIf="rol">
-                <mat-icon class="red-icon" matTooltip="Eliminar Servicio">
+                <mat-icon class="red-icon" matTooltip="Eliminar Servicio" (click)="DeleteServicio(row.id)">
                   clear
                 </mat-icon>
               </a>

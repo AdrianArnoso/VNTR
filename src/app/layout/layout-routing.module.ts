@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from '../home/home.component';
 import { NewSistemaComponent } from '../sistemas/new-sistema/new-sistema.component';
 import { VerSistemaComponent } from '../sistemas/ver-sistema/ver-sistema.component';
-import { ModifySistemasComponent } from '../sistemas/modify-sistemas/modify-sistemas.component';
+// import { ModifySistemasComponent } from '../sistemas/modify-sistemas/modify-sistemas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

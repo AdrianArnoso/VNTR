@@ -82,6 +82,11 @@ export class HomeComponent implements OnInit {
     console.log(this.actServiciosSearch.value);
     this.apiService.getServicioSearch$(this.actServiciosSearch.value).subscribe();
   }
+  DeleteServicio(id){
+    console.log(id);
+    return this.apiService.DeleteServicios$(id).subscribe();
+  }
+  
 
 }
 
