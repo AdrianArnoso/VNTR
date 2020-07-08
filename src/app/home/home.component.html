@@ -12,7 +12,7 @@
       <mat-form-field>
         <mat-label>Criticidad</mat-label>
         <mat-select formControlName="criticidad_servicio">
-          <!-- <mat-option value="Todo"></mat-option> -->
+          <mat-option value="Todo"></mat-option>
           <mat-option value="Si">Si</mat-option>
           <mat-option value="No">No</mat-option>
         </mat-select>
@@ -41,8 +41,8 @@
         </mat-select>
       </mat-form-field>
       <mat-card-actions appearance="standard" class="button-search">
-        <button mat-icon-button class="a-search" aria-label="search-button">
-          <mat-icon matTooltip="Buscar" (click)="SearchServicio()" >
+       <!-- <button mat-icon-button class="a-search" aria-label="search-button">
+           <mat-icon matTooltip="Buscar" (click)="SearchServicio()" >
             search
           </mat-icon>
         </button>
@@ -50,9 +50,11 @@
           <mat-icon matTooltip="Limpiar Filtros" type="button" (click)="onReset()">
             delete
           </mat-icon>
-        </button>
-        <!-- <button mat-flat-button color="primary">LIMPIAR</button>
-        <button mat-flat-button color="primary">BUSCAR</button> -->
+        </button> -->
+
+        <button mat-flat-button color="primary" (click)="onReset()">LIMPIAR</button>
+        <button mat-flat-button color="primary" (click)="SearchServicio()">BUSCAR</button>
+
       </mat-card-actions>
     </div>
   </div>

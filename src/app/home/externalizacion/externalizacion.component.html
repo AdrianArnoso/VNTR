@@ -19,6 +19,7 @@
   <mat-card *ngFor="let servicio of servicios" class="">
     <mat-card-header>
       <mat-card-title>{{ servicio.id }} - {{ servicio.name}}</mat-card-title>
+      <mat-card-subtitle>Criticidad : {{ servicio.criticidad }}</mat-card-subtitle>
       <mat-card-subtitle>Responsable : {{ servicio.responsable }}</mat-card-subtitle>
       <mat-card-subtitle>Negocio : {{ servicio.negocio }}</mat-card-subtitle>
     </mat-card-header>
