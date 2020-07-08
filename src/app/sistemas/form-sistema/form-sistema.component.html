@@ -12,7 +12,7 @@
         <div class="flex-container">
           <mat-form-field appearance="standard" class="all-width">
             <mat-label>Sistema de Información</mat-label>
-            <input matInput formControlName="sistemaInformacion_es"/>
+            <input matInput formControlName="sistemaInformacion_es" value="{{sistema.sistemaInformacion}}"/>
             <mat-error
             *ngIf="sistemasForm.controls['sistemaInformacion_es'].hasError('required')"
           >
@@ -42,7 +42,7 @@
         <div class="flex-container">
           <mat-form-field appearance="standard" class="width-radio">
             <mat-label>Crítico</mat-label>
-            <mat-select formControlName="critico" >
+            <mat-select formControlName="critico"value={{sistema.criticidad}}>
               <mat-option value="si">SÍ</mat-option>
               <mat-option value="no">NO</mat-option>
             </mat-select>

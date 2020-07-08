@@ -3,30 +3,20 @@
   font-family: 'Roboto', sans-serif;
 }
 
-#logo{
-  width: 100px;
-  height: 25px;
-  padding-right: 16px;
-}
-
 .toolbar-icon {
-  padding: 0 14px;
+  margin-left: 19px;
+  margin-right: 19px;
 }
 
 .toolbar-space {
   flex: 1 1 auto;
 }
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
+.toolbar-title {
+  font-size: 20px;
 }
-.languageLogin{
-  display: flex;
-  justify-content: space-between;
-  float: right;
-  margin-right: 20px;
-}
-.material-icons{
-  margin-top: 10px;
+
+button{
+  font-size: 14px;
+
 }

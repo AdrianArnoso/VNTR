@@ -10,7 +10,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { VerSistemaComponent } from './ver-sistema/ver-sistema.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-
 @NgModule({
   imports: [
     CommonModule,

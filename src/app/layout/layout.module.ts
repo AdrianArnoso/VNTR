@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavShellComponent } from './nav-shell/nav-shell.component';
-import { MatToolbarModule, MatTabsModule, MatSidenavModule, MatTableModule, MatSortModule, MatSlideToggleModule } from '@angular/material';
+import { MatToolbarModule, MatTabsModule, MatSidenavModule, MatTableModule, MatSortModule, MatSlideToggleModule, MatMenuModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { SistemasComponent } from '../sistemas/sistemas.component';
@@ -24,7 +24,8 @@ import { SistemasModule } from '../sistemas/sistemas.module';
     RouterModule,
     MatSortModule,
     SistemasModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatMenuModule
   ],
   declarations: [PageNotFoundComponent, NavShellComponent, LoginComponent, UserInfoComponent],
   exports: [NavShellComponent]

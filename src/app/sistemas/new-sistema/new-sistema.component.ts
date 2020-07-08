@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TareasService } from 'src/app/tareas.service';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'abanca-new-sistema',
@@ -12,12 +13,27 @@ export class NewSistemaComponent implements OnInit {
   familias = this.tareasService.getFamilias();
   sistema;
 
+
   constructor(private tareasService: TareasService, route: ActivatedRoute,apiService: ApiService) { 
-    let id = route.snapshot.params.id;
+    
     this.familias = tareasService.getFamilias();
-    apiService.getSistemaById$(id).then(datos =>{
+   
+    let id = route.snapshot.params.id; 
+    console.log(id);
+    if(!isUndefined(id))
+    {
+      apiService.getSistemaById$(id).then(datos =>{
       this.sistema = datos;
-    });
+      });
+    }else{
+      this.sistema = {
+        id:"",
+        sistemaInformacion:"",
+        criticidad:""   
+      }
+    }
+    
+    
   }
 
   ngOnInit() {
