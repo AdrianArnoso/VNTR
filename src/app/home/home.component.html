@@ -1,4 +1,4 @@
-<form [formGroup]="actServiciosSearch" novalidate (ngSubmit)="SearchServicio()">
+<form [formGroup]="actServiciosSearch" novalidate >
   <div class="row">
     <div class="flex-container">
       <mat-form-field>
@@ -187,19 +187,19 @@
               <button mat-icon-button [routerLink]="['/modCatalogo', row.id]" *ngIf="rol" aria-label="editar-button">
                 <mat-icon matTooltip="Editar Servicio">
                   create
-                </mat-icon>
-<<<<<<< HEAD
+                 </mat-icon>
+
+<!--<<<<<< HEAD
               </a>
               <a [routerLink]="" *ngIf="rol">
                 <mat-icon class="red-icon" matTooltip="Eliminar Servicio" (click)="DeleteServicio(row.id)">
                   clear
-=======
+======= -->
               </button>
-              <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button">
+              <button mat-icon-button [routerLink]="" *ngIf="rol" aria-label="eliminar-button"  (click)="DeleteServicio(row.id)">
                 <mat-icon matTooltip="Eliminar Servicio">
                   <!-- clear -->
                   delete
->>>>>>> 794fab72d2f33c57b8cc2d6902c8f32d29199d23
                 </mat-icon>
               </button>
               <!-- <button mat-flat-button routerLink="/externalizacion" color="primary" >VER EXTERNALIZACION</button> -->
