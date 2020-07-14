@@ -80,7 +80,7 @@ export class ExternalizacionComponent implements OnInit {
     },
     {
       // Se: "0",
-      Id_Actividad: "ST01",
+      Id_Actividad: "ST02",
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
@@ -88,7 +88,7 @@ export class ExternalizacionComponent implements OnInit {
     },
     {
       // Se: "0",
-      Id_Actividad: "ST01",
+      Id_Actividad: "ST03",
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
