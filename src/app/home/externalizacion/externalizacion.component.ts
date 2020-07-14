@@ -76,11 +76,11 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      Empresas:[false,false,true,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
-      Id_Actividad: "ST01",
+      Id_Actividad: "ST02",
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
@@ -88,7 +88,7 @@ export class ExternalizacionComponent implements OnInit {
     },
     {
       // Se: "0",
-      Id_Actividad: "ST01",
+      Id_Actividad: "ST03",
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
@@ -324,7 +324,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,true,true]
     },
   ];
 
