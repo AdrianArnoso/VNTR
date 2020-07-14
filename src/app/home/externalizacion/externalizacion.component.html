@@ -27,11 +27,12 @@
      {{servicio.descripcion}}
     </mat-card-content>
   </mat-card>
+  <br>
 </div>
 
 
 <!-- Tabla -->
-
+<div class="example-container mat-elevation-z8">
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" id="excel-table">
   <!-- Position Column -->
 
@@ -42,34 +43,34 @@
 
   <!-- Name Column -->
   <ng-container matColumnDef="Id_Actividad">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.Id_Actividad}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width"> Id </th>
+    <td mat-cell *matCellDef="let element" class="less-width"> {{element.Id_Actividad}} </td>
   </ng-container>
 
   <!-- Weight Column -->
-  <ng-container matColumnDef="Descripcion">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actividades Servicio </th>
-    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+  <ng-container matColumnDef="Descripcion" sticky>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="most-width"> Actividades Servicio </th>
+    <td mat-cell *matCellDef="let element" class="most-width"> {{element.Descripcion}} </td>
   </ng-container>
 
 
   <ng-container matColumnDef="Externalizacion">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Externalizacion </th>
-    <td mat-cell *matCellDef="let element"> {{element.Externalizacion}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width"> Externalizacion </th>
+    <td mat-cell *matCellDef="let element" class="less-width-body"> {{element.Externalizacion}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Criticidad">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Criticidad </th>
-    <td mat-cell *matCellDef="let element"> {{element.Criticidad}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width"> Criticidad </th>
+    <td mat-cell *matCellDef="let element" class="less-width-body"> {{element.Criticidad}} </td>
   </ng-container>
 
   <ng-container *ngFor="let empresa of empresas" matColumnDef="{{empresa.name}}">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{empresa.name}} </th>
-    <td mat-cell *matCellDef="let element">{{element.Empresas[empresa.id]}}  </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="less-width"> {{empresa.name}} </th>
+    <td mat-cell *matCellDef="let element" class="less-width-body">{{element.Empresas[empresa.id]}}  </td>
   </ng-container>
 
 
-  <ng-container matColumnDef="Buttons" >
+  <ng-container matColumnDef="Buttons">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
       <mat-card-actions appearance="standard" class="button-table">
@@ -99,7 +100,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+</div>
 
 <mat-paginator [length]="length"
                [pageSize]="pageSize"
