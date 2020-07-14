@@ -324,7 +324,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,true,true]
     },
   ];
 
