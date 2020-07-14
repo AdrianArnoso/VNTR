@@ -12,8 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
