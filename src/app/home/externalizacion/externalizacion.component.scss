@@ -40,6 +40,29 @@ mat-card-content{
 
 }
 
+.less-width {
+  width: 13%;
+  padding: 2px;
+  // background-color: rosybrown;
+  text-align: left;
+}
+
+.less-width-body {
+  width: 13%;
+  padding: 2px;
+  // background-color: rosybrown;
+  text-align: left;
+  padding-left: 6px;
+}
+
+.most-width {
+  width: 35%;
+  padding: 2px;
+  // background-color: yellow;
+  text-align: left;
+
+}
+
 .div-button{
   float: right;
   margin-right: 10px;
@@ -54,10 +77,14 @@ button{
 }
 
 .button-table {
+  display: flex;
+  flex-direction: row;
+  width: 6%;
+  padding-right: 19px;
   margin-top: 5px;
-  //  background-color: orange;
-  /* IMPORTANTE */
-  float: right;
+  // background-color: orange;
+  align-content: center;
+ //float: right;
 }
 
 a {
