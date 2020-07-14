@@ -31,19 +31,11 @@ import { Location } from "@angular/common";
   styleUrls: ["./externalizacion.component.scss"],
 })
 export class ExternalizacionComponent implements OnInit {
-  displayedColumns: string[] = [
-    // "Se",
-    "Id_Actividad",
-    "Descripcion",
-    "Externalizacion",
-    "Criticidad",
-    "Altia",
-    "Indra",
-    "Buttons",
-  ];
+  displayedColumns: string[];
   rol: boolean;
   fileName = "Externalizaciones.xlsx";
   serviceById$: Observable<any[]>;
+  empresas; 
   // dataSource = ELEMENT_DATA02;
   constructor(
     tareasService: TareasService,
@@ -52,9 +44,21 @@ export class ExternalizacionComponent implements OnInit {
     private location: Location
   ) {
     this.rol = tareasService.getRol();
-
+    this.empresas = tareasService.getEmpresasExternalizadas();
+    this.displayedColumns = [
+      // "Se",
+      "Id_Actividad",
+      "Descripcion",
+      "Externalizacion",
+      "Criticidad",
+    ];
+    for(let i=0 ; i < this.empresas.length ; i++){
+      this.displayedColumns.push(this.empresas[i].name);
+    }
+    this.displayedColumns.push("Buttons");
     const serviceId = activatedRoute.snapshot.params.id;
     console.log("value: " + serviceId);
+    console.log(this.displayedColumns);
     this.serviceById$ = api.getServicioById$(serviceId);
   }
   length = 100;
@@ -72,8 +76,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -81,8 +84,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -90,8 +92,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -99,8 +100,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -108,8 +108,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -117,8 +116,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -126,8 +124,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -135,8 +132,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -144,8 +140,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -153,8 +148,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -162,8 +156,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -171,8 +164,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -180,8 +172,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -189,8 +180,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -198,8 +188,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -207,8 +196,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -216,8 +204,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -225,8 +212,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -234,8 +220,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -243,8 +228,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -252,8 +236,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -261,8 +244,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -270,8 +252,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -279,8 +260,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -288,8 +268,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -297,8 +276,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -306,8 +284,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -315,8 +292,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -324,8 +300,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -333,8 +308,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -342,8 +316,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Altia: "X",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
@@ -351,8 +324,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo derivados de cambios",
       Externalizacion: "SI",
       Criticidad: "A",
-      Altia: "",
-      Indra: "X",
+      Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
     },
   ];
 
@@ -383,7 +355,6 @@ export class Externalizacion {
     public Descripcion: string,
     public Externalizacion: string,
     public Criticidad: string,
-    public Altia: string,
-    public Indra: string
+    public Empresas: boolean[],
   ) {}
 }

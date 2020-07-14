@@ -63,19 +63,14 @@
     <td mat-cell *matCellDef="let element"> {{element.Criticidad}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Altia">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Altia </th>
-    <td mat-cell *matCellDef="let element"> {{element.Altia}} </td>
+  <ng-container *ngFor="let empresa of empresas" matColumnDef="{{empresa.name}}">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{empresa.name}} </th>
+    <td mat-cell *matCellDef="let element"> {{element.Empresas[empresa.id]}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Indra">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Indra </th>
-    <td mat-cell *matCellDef="let element"> {{element.Indra}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Buttons" >
+  <ng-container matColumnDef="Buttons">
     <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let j = index;">
+    <td mat-cell *matCellDef="let element">
       <mat-card-actions appearance="standard" class="button-table">
         <!-- <a>
           <mat-icon matTooltip="Ver Actividad del Servicio">
