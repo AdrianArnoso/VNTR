@@ -76,7 +76,7 @@ export class ExternalizacionComponent implements OnInit {
       Descripcion: "Servicios de desarrollo de nuevas soluciones",
       Externalizacion: "SI",
       Criticidad: "B",
-      Empresas:[true,true,true,false,true,true,false,false,true,true,true,false,false]
+      Empresas:[false,false,true,false,true,true,false,false,true,true,true,false,false]
     },
     {
       // Se: "0",
