@@ -50,7 +50,6 @@ export class TareasService {
       { id: 9, name: 'KPMG'},
       { id: 10, name: 'DELOITTE' },
       { id: 11, name: 'BAHIA'},
-      { id: 12, name: 'INDRA'},
     ];
   }
 
