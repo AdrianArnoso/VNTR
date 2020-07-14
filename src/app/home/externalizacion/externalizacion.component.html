@@ -65,10 +65,11 @@
 
   <ng-container *ngFor="let empresa of empresas" matColumnDef="{{empresa.name}}">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{empresa.name}} </th>
-    <td mat-cell *matCellDef="let element"> {{element.Empresas[empresa.id]}} </td>
+    <td mat-cell *matCellDef="let element">element.Empresas[empresa.id]}}  </td>
   </ng-container>
 
-  <ng-container matColumnDef="Buttons">
+
+  <ng-container matColumnDef="Buttons" >
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
       <mat-card-actions appearance="standard" class="button-table">
