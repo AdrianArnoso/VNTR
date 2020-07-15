@@ -41,11 +41,15 @@ export class HomeComponent implements OnInit {
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   serviciosList$: Observable<any[]>;
-
+  dataSource;
   constructor(tareasService: TareasService, private apiService: ApiService, private fb: FormBuilder) {
     this.rol = tareasService.getRol();
     this.responsables = tareasService.getResponsables();
-    this.serviciosList$ = apiService.getServicios$();
+    apiService.getServicios$().subscribe(data =>{
+      this.dataSource = new MatTableDataSource<Servicios>(data);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
     this.negocios = tareasService.getNegocios();
   }
 
@@ -58,12 +62,11 @@ export class HomeComponent implements OnInit {
     });
 
   ngOnInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+  
   }
 
   displayedColumns: string[] = ['id', 'name', 'descripcion', 'criticidad', 'responsable', 'negocio', /*'select' ,*/ 'boton'];
-  dataSource = new MatTableDataSource<Servicios>(ELEMENT_DATA);
+
   selection = new SelectionModel<Servicios>(true, []);
 
   exportexcel(): void {

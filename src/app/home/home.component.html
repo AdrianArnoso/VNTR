@@ -66,8 +66,7 @@
     mat-table
     matSort
     id="excel-table"
-    *ngIf="serviciosList$ | async as serviciosList"
-    [dataSource]="serviciosList"
+    [dataSource]="dataSource"
   >
     <!-- Id Column -->
 
