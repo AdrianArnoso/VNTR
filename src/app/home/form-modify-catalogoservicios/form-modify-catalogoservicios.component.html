@@ -11,6 +11,7 @@
           <mat-form-field appearance="standard" class="most-width">
             <mat-label>Catálogo de Servicios</mat-label>
             <input matInput formControlName="catalogo_servicios_es" value="{{ servicio.name }}" />
+            <!-- *ngIf="catalogoForm.controls['catalogo_servicios_es'].hasError('required')" -->
             <mat-error
               *ngIf="catalogoForm.controls['catalogo_servicios_es'].hasError('required')"
             >
@@ -120,7 +121,8 @@
     </mat-card-content>
 
     <mat-card-actions appearance="standard" class="div-button">
-      <button mat-flat-button color="primary" [disabled]="catalogoForm.invalid">GUARDAR</button>
+      <!-- [disabled]="catalogoForm.invalid" -->
+      <button mat-flat-button color="primary" >GUARDAR</button>
       <button mat-flat-button color="primary" (click)="goBack()">CANCELAR</button>
   </mat-card-actions>
 
