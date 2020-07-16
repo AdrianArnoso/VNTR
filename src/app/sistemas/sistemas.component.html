@@ -24,18 +24,19 @@
           <mat-option value="No">No</mat-option>
         </mat-select>
       </mat-form-field>
-      
-       <mat-form-field>
+
+      <mat-form-field>
         <mat-label>Responsable</mat-label>
-        <mat-select  formControlName="responsable_sistema">
+        <mat-select  formControlName="responsable">
           <mat-option
-            *ngFor="let dato of datos | async"
-            [value]="dato.id"
+            *ngFor="let responsable of responsables"
+            [value]="responsable.id"
           >
-            {{ dato.id }}
+            {{ responsable.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
+
 
       <mat-card-actions appearance="standard" class="button-search">
         <!-- <button mat-icon-button class="a-search" aria-label="search-button">

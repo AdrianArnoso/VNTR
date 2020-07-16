@@ -33,6 +33,9 @@ export class TareasService {
       { id: 0, name: 'Arnoso' },
       { id: 1, name: 'Quijano' },
       { id: 2, name: 'Fraga' },
+      { id: 3, name: 'Prego' },
+      { id: 4, name: 'Regueira' },
+      { id: 5, name: 'Pais' },
     ];
   }
 

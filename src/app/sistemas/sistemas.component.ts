@@ -18,6 +18,8 @@ export class SistemasComponent implements OnInit {
   length = 100;
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 100];
+  responsables;
+
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -50,7 +52,7 @@ export class SistemasComponent implements OnInit {
       console.log(id);
       return this.apiService.DeleteSistemas$(id).subscribe();
     }
-    
+
 
   /*[
     {id: 'SI00001', sistemaInformacion: 'Sistema de información patrimonial', criticidad: 'No'},
@@ -61,24 +63,26 @@ export class SistemasComponent implements OnInit {
     {id: 'SI00006', sistemaInformacion: 'Sistema de información de gestión operativa', criticidad: 'No'},
   ];
 */
-  constructor(private apiService: ApiService,tareasService: TareasService,private fb: FormBuilder,) { 
+  constructor(private apiService: ApiService,tareasService: TareasService,private fb: FormBuilder,) {
     this.rol = tareasService.getRol();
+    this.responsables = tareasService.getResponsables();
+
   }
 
-  
-  
-  
+
+
+
   ngOnInit() {
-   
+
   }
   exportexcel(): void {
-       
-    let element = document.getElementById('excel-table'); 
+
+    let element = document.getElementById('excel-table');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, this.fileName);
-   
+
   }
 
 }
