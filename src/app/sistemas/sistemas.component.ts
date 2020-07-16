@@ -13,7 +13,7 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./sistemas.component.scss']
 })
 export class SistemasComponent implements OnInit {
-  columnas: string[] = ['id','sistemaInformacion','criticidad','borrar'];
+  columnas: string[] = ['id','sistemaInformacion','criticidad','responsable','borrar'];
   fileName= 'Sistemas.xlsx';
   length = 100;
   pageSize = 5;
@@ -34,7 +34,8 @@ export class SistemasComponent implements OnInit {
   actSistemasSearch = this.fb.group({
     id_sistema: [null],
     name_sistema: [null ],
-    criticidad_sistema: [null]
+    criticidad_sistema: [null],
+    responsable_sistema: [null]
     });
 
     SearchSistemas(){
