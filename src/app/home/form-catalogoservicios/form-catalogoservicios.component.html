@@ -48,7 +48,7 @@
 
           <mat-form-field appearance="standard" class="less-width">
             <mat-label>Negocio</mat-label>
-            <mat-select formControlName="negocio">
+            <mat-select formControlName="negocio" multiple>
               <mat-option *ngFor="let negocio of negocios" [value]="negocio.id">
                 {{ negocio.name }}
               </mat-option>
@@ -117,8 +117,7 @@
     </mat-card-content>
 
     <mat-card-actions appearance="standard" class="div-button">
-      <!-- [disabled]="catalogoForm.invalid" -->
-      <button mat-flat-button color="primary" >GUARDAR</button>
+      <button mat-flat-button color="primary" [disabled]="catalogoForm.invalid">GUARDAR</button>
       <button mat-flat-button color="primary"  (click)="goBack()">CANCELAR</button>
   </mat-card-actions>
 
