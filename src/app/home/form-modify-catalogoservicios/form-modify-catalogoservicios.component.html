@@ -50,7 +50,8 @@
           <mat-form-field appearance="standard" class="less-width">
             <mat-label>Negocio</mat-label>
             <!-- <mat-select formControlName="negocio"> -->
-            <mat-select [(value)]= "selectedNeg" multiple>
+            <!-- <mat-select [(value)]= "selectedNeg" multiple> -->
+              <mat-select [formControl]="selectedNeg" multiple>
               <mat-option *ngFor="let negocio of negocios" [value]="negocio.name">
                 {{ negocio.name }}
               </mat-option>
