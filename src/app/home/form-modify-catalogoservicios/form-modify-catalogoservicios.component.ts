@@ -48,7 +48,7 @@ export class FormModifyCatalogoserviciosComponent implements OnInit {
     this.dataDescripcion = this.servicios[0].descripcion;
     // console.log("Selected " + this.selectedNeg );
 
-    const selectedNegociosList: any[] = [this.servicios[0].negocio];
+    const selectedNegociosList: any[] = this.servicios[0].negocio;
     this.selectedNeg.setValue(selectedNegociosList);
     console.log("Selected " + selectedNegociosList );
 
