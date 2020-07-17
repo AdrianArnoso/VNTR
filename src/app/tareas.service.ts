@@ -24,7 +24,7 @@ export class TareasService {
       { id: 2, name: 'ABANCA Suiza' },
       { id: 3, name: 'ABANCA USA'},
       { id: 4, name: 'ASF España' },
-      { id: 5, name: 'ASF Porugal'},
+      { id: 5, name: 'ASF Portugal'},
     ];
   }
 

@@ -33,7 +33,7 @@
 
       <mat-form-field>
         <mat-label>Negocio</mat-label>
-        <mat-select  formControlName="negocio">
+        <mat-select  formControlName="negocio" multiple>
           <mat-option
             *ngFor="let negocio of negocios"
             [value]="negocio.id"
