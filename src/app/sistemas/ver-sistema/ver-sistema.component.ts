@@ -15,11 +15,13 @@ export class VerSistemaComponent implements OnInit {
   sistema$: Observable<any[]>;;
   //{id:"Ejemplo ID",sistemaInformacion:"Ejemplo Sistema Información",criticidad:"Ejemplo criticidad"}
   familias: Object;
+  systemById$: Observable<any[]>;
 
 
   constructor(private tareasService: TareasService,private apiService: ApiService,route:ActivatedRoute,     private location: Location
     ) {
     let id = route.snapshot.params.id;
+    //console.log("idJavi: " + id);
     this.familias = tareasService.getFamilias();
     this.sistema$ = this.apiService.getSistemaById$(id);
     //this.rol = tareasService.getRol();
