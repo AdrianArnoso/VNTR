@@ -55,6 +55,10 @@ export class ApiService {
      // catchError(e => throwError(e)));
      return this.http.post<IActividadExternalizacion>(url,datos);
   }
+  
+  getExternalizacion$() {
+    return this.http.get<any[]>(this.path+ "/externalizaciones").pipe(map(data => (data ? data : [])));
+  }
 
   getSistemas$() {
     return this.http.get<any[]>(this.path + "/sistemas").pipe(map(data => (data ? data : []))).toPromise();

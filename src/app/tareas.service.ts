@@ -88,4 +88,265 @@ export class TareasService {
     ];
   }
 
+  getExternalizacion(){
+    return [
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[false,false,true,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST02",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST03",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST04",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST05",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST06",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST07",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,false,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST08",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,true,false,true,false,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,true,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[false,false,false,false,true,true,false,false,true,false,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo de nuevas soluciones",
+        Externalizacion: "SI",
+        Criticidad: "B",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,false,false]
+      },
+      {
+        // Se: "0",
+        Id_Actividad: "ST01",
+        Descripcion: "Servicios de desarrollo derivados de cambios",
+        Externalizacion: "SI",
+        Criticidad: "A",
+        Empresas:[true,false,false,false,true,true,false,false,true,true,true,true,true]
+      },
+    ];
+  }
+
 }
