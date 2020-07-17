@@ -171,7 +171,9 @@
             Negocio
           </th>
           <td mat-cell *matCellDef="let row" class="medium-width">
-            {{ row.negocio }}
+            <div *ngFor="let company of row.negocio">
+              {{ company }}
+            </div>
           </td>
         </ng-container>
 
