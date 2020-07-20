@@ -9,21 +9,7 @@ import { ApiService } from "src/app/api.service";
 import { Observable } from "rxjs";
 import { Location } from "@angular/common";
 
-//  export interface Extarnilacion {
-//   Se: String;
-//   Id_Actividad: string;
-//   Descripcion: string;
-//   Externalizacion: string;
-//   Criticidad:string;
-//   Altia:string;
-//   Indra: string;
-//  }
 
-// const ELEMENT_DATA02: Extarnilacion[] = [
-//   {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo de nuevas soluciones',Externalizacion: 'SI',Criticidad:'B',Altia: 'X',Indra: 'X'},
-//   {Se: '0', Id_Actividad: 'ST01', Descripcion: 'Servicios de desarrollo derivados de cambios',Externalizacion: 'SI',Criticidad:'A',Altia: '',Indra: 'X'}
-
-// ];
 
 @Component({
   selector: "abanca-externalizacion",
