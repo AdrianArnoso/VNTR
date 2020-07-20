@@ -82,6 +82,11 @@ mat-card-content{
 
 }
 
+mat-checkbox{
+  margin-top: 16px;
+  font-size: 14px;
+}
+
 .div-button{
   float: right;
   margin-right: 10px;
@@ -100,7 +105,7 @@ button{
   flex-direction: row;
   width: 6%;
   padding-right: 19px;
-  margin-top: 5px;
+  margin-top: 10px;
   // background-color: orange;
   align-content: center;
  //float: right;
